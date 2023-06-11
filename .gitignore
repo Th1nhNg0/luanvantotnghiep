@@ -1,1 +1,3 @@
 typst.exe
+*.pdf
+!main.pdf
