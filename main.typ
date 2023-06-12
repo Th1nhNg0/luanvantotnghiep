@@ -25,3 +25,5 @@
 #outline(indent: true)
 #pagebreak()
 #include "content/loinoidau.typ"
+
+#bibliography("ref.bib")

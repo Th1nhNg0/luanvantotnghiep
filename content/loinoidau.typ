@@ -12,6 +12,8 @@ Nội dung luận văn bao gồm xx chương:
 
 == Giới thiệu <intro>
 
-== Phần tiếp theo
+== Phần tiếp theo <intro2>
 
-Trong @intro chúng ta đã biết rằng ...
+Trong @intro chúng ta đã biết rằng @intro2
+
+Theo tác giả của 2 paper#cite("viBert","phobert")
