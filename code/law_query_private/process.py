@@ -1,86 +1,36 @@
 import re
-
-
-class Paths:
-    def __init__(self, node: 'Node'):
-        self.paths = []
-        self._traverse(node)
-
-    def _traverse(self, node: 'Node'):
-        # travel to root
-        path = {
-            'node_type': node.node_type,
-            'node_id': node.node_id,
-        }
-        self.paths = [path] + self.paths
-        if node.parent is not None:
-            self._traverse(node.parent)
-
-    def __repr__(self):
-        s = ''
-        for path in self.paths:
-            s += f'{path["node_type"]} {path["node_id"]} -> '
-        return s[:-4]
-
-    def __str__(self):
-        return self.__repr__()
-
-    def __len__(self):
-        return len(self.paths)
-
-    def __getitem__(self, idx):
-        return self.paths[idx]
-
-    def __iter__(self):
-        return iter(self.paths)
+import json
+import gzip
 
 
 class Node:
-    """Node class"""
-
     def __init__(self, name, content, node_type, node_id, parent=None):
-        """Constructor of Node class
-
-        Parameters
-        ----------
-        name : str
-            name of node
-        content : str
-            content of node
-        node_type : str
-            node type
-        node_id : int
-            node id
-        parent : Node, optional
-            parent of node, by default None
-        """
-
         self.name = name
         self.content = content
         self.node_id = node_id
         self.node_type = node_type
         self.children = []
         self.parent = parent
-        self.path = Paths(self)
 
-    def add_child(self, obj):
-        """Add child to node
-
-        Parameters
-        ----------
-        obj : Node
-            child node
-        """
+    def add_child(self, obj: 'Node'):
+        obj.parent = self
         self.children.append(obj)
 
     def __repr__(self):
         return self.name
 
     def __str__(self):
-        return f'Name: {self.name}\nNode type: {self.node_type}\nNode id: {self.node_id}\nChildren: {len(self.children)}\nContent:\n{self.content}'
+        return f'--node--\nName: {self.name}\nNode type: {self.node_type}\nNode id: {self.node_id}\nChildren: {len(self.children)}\nContent: {len(self.content)} characters\n--node--\n'
+
+    def print_path(self):
+        s = ''
+        node = self
+        while node is not None:
+            s = node.name + ' > ' + s
+            node = node.parent
+        return s[:-3]
 
     def asdict(self):
-        """Convert node to dict"""
         return {
             'name': self.name,
             'node_id': self.node_id,
@@ -90,12 +40,12 @@ class Node:
 
 
 class Tree:
-    """Tree class"""
+    def __init__(self, metadata: dict, content: str, raw_text: str):
+        self.root = self._create_tree(metadata['ten_van_ban'], content, 'root')
+        self.raw_text = raw_text
+        self.metadata = metadata
 
-    def __init__(self, name, content):
-        self.root = self._create_tree(name, content, 'root')
-
-    def _create_tree(self, name, content, node_type, parent=None):
+    def _create_tree(self, name, content, node_type, parent=None) -> Node:
         root = Node(name, content, node_type,
                     self._make_node_id(name, node_type), parent)
         pattern = r'^“(.*?)”$'
@@ -104,7 +54,7 @@ class Tree:
         for match in matches:
             new_content = new_content.replace(match.group(0), '')
         matches = re.findall(
-            r'^(Phần thứ [\d\w]+.*)$', new_content, flags=re.MULTILINE)
+            r'^(Phần thứ [\d\w]+.*)$', new_content, flags=re.MULTILINE | re.IGNORECASE)
         node_type = 'phần'
         if len(matches) == 0:
             matches = re.findall(
@@ -157,7 +107,8 @@ class Tree:
         if node_type == 'root':
             node_id = name
         if node_type == 'phần':
-            matches = re.findall(r'^Phần thứ ([\d\w]+)', name)
+            matches = re.findall(
+                r'^Phần thứ ([\d\w]+)', name, flags=re.IGNORECASE)
             node_id = matches[0]
         if node_type == 'chương':
             matches = re.findall(r'^Chương ([\d\w]+)', name)
@@ -197,17 +148,79 @@ class Tree:
                 s += self._print_tree(child, level+1)
         return s
 
+    def export(self):
+        data = {
+            'metadata': self.metadata,
+            'tree': self._export(self.root),
+            'raw_text': self.raw_text,
+        }
+        return data
+
+    def _export(self, node: Node):
+        to_find = node.content
+        if to_find == '':
+            to_find = node.name
+        pivot = self.raw_text.find(to_find)
+        if pivot == -1 and node.node_type == 'root':
+            pivot = 0
+        if pivot == -1 and node.node_type != 'root':
+            print('❌', node.name)
+        return {
+            'name': node.name,
+            'node_id': node.node_id,
+            'node_type': node.node_type,
+            'content': {
+                'start': pivot,
+                'end': pivot + len(to_find),
+            },
+            'children': [self._export(child) for child in node.children],
+
+        }
+
+
+class ITree:
+    def __init__(self, data: dict):
+        self.raw_text = data['raw_text']
+        self.metadata = data['metadata']
+        self.root = self._import(data['tree'])
+
+    def _import(self, data: dict) -> Node:
+        content = self.raw_text[data['content']
+                                ['start']:data['content']['end']]
+        root = Node(data['name'], content, data['node_type'],
+                    data['node_id'])
+        for child in data['children']:
+            root.add_child(self._import(child))
+        return root
+
+    def __repr__(self):
+        return self._print_tree(self.root)
+
+    def __str__(self):
+        return self._print_tree(self.root)
+
+    def _print_tree(self, node: 'Node', level=0):
+        s = ''
+        s += '  '*level + node.name + '\n'
+        if len(node.children) == 0 and len(node.content) > 0 and node.content != node.name:
+            content = node.content
+            content = re.sub(r'\n', '\n'+'  '*(level+1)+'📄', content)
+            s += '  '*(level+1)+'📄' + content + '\n'
+        else:
+            for child in node.children:
+                s += self._print_tree(child, level+1)
+        return s
+
 
 class LawQuery:
-    """LawQuery class"""
+    tree: ITree
 
-    def __init__(self, text: str, metadata: dict, raw_text: str):
-        self.metadata = metadata
-        self.tree = Tree(metadata['ten_van_ban'], text)
-        self.text = text
-        self.nodes = []
+    def __init__(self, filepath: str):
+        with gzip.open(filepath, 'rb') as f:
+            data = json.loads(f.read())
+        self.tree = ITree(data)
+        self.__nodes = []
         self._traverse(self.tree.root)
-        self.raw_text = raw_text
 
     def _traverse(self, node: Node):
         """Traverse tree and add node to self.nodes
@@ -222,11 +235,11 @@ class LawQuery:
         None
         """
 
-        self.nodes.append(node)
+        self.__nodes.append(node)
         for child in node.children:
             self._traverse(child)
 
-    def find_node_by_path(self, node_path: list[dict]) -> Node:
+    def query_by_paths(self, node_path: list[dict]) -> Node:
         nodes = []
         for path in node_path:
             node_type = path['node_type'] if 'node_type' in path else None
@@ -242,25 +255,9 @@ class LawQuery:
             nodes = new_nodes
         return nodes
 
-    def query(self, node_type: str = None, node_id: str = None, name: str = None, parent: Node = None) -> list[Node]:
-        """Query nodes in tree
-
-        Parameters
-        ----------
-        node_type : str, optional
-            node type, by default None
-        node_id : [type], optional
-            node id, by default None
-        name : str, optional
-            name of node, by default None
-
-        Returns
-        ------- 
-        list[Node]
-            list of nodes in tree
-        """
+    def query(self, name: str = None, node_type: str = None, node_id: str = None,  parent: Node = None) -> list[Node]:
         results = []
-        for node in self.nodes:
+        for node in self.__nodes:
             if node_type is not None and node.node_type != node_type:
                 continue
             if node_id is not None and node.node_id != node_id:
@@ -272,5 +269,8 @@ class LawQuery:
             results.append(node)
         return results
 
-    def print_tree(self):
-        print(self.tree)
+    def __repr__(self):
+        return self.tree.__repr__()
+
+    def __str__(self):
+        return self.tree.__str__()
