@@ -17,13 +17,16 @@
     justify: true
 )
 
-#include "./content/cover.typ"
-#include "./content/loicamon.typ"
+#include "./content/1_cover.typ"
+#include "./content/2_loicamon.typ"
 #outline(indent: true)
 #pagebreak()
-#include "./content/loinoidau.typ"
-#include "./content/kienthucchuanbi.typ"
-#include "./content/ketluan.typ"
+#include "./content/3_loinoidau.typ"
+#include "./content/4_kienthucchuanbi.typ"
+#include "./content/5_ungdung.typ"
+#include "./content/6_thachthuc.typ"
+#include "./content/7_thunghiem.typ"
+#include "./content/8_ketluan.typ"
 
 #pagebreak()
 #outline(
@@ -31,4 +34,4 @@
     target: figure
 )
 #pagebreak()
-#bibliography("ref.yml",style:"mla")
+#bibliography("ref.bib",style:"ieee")
