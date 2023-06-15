@@ -1,4 +1,3 @@
-#import "template/cover.typ": cover
 #set page(
     paper:"a4",
     margin: 2.5cm,
@@ -9,21 +8,27 @@
         lang:"vi",
         )
 #set heading(
-    numbering: "1.1",
+    numbering: "1.1.1.a.",
 )
-
+#set cite(
+    style: "numerical",
+)
 #set par(
     justify: true
 )
 
-#cover(
-    "Ngô Phú Thịnh",
-    "Deep Learning in the Legal System of Vietnam: Opportunities and Challenges"
-)
-
-#include "content/loicamon.typ"
+#include "./content/cover.typ"
+#include "./content/loicamon.typ"
 #outline(indent: true)
 #pagebreak()
-#include "content/loinoidau.typ"
+#include "./content/loinoidau.typ"
+#include "./content/kienthucchuanbi.typ"
+#include "./content/ketluan.typ"
 
-#bibliography("ref.bib")
+#pagebreak()
+#outline(
+    title: [Phụ lục],
+    target: figure
+)
+#pagebreak()
+#bibliography("ref.yml",style:"mla")
