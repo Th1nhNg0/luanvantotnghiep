@@ -163,3 +163,8 @@ Multimodal Model là đề tài nóng của trí tuệ nhân tạo. Ví dụ n�
         ]
     )
 ]
+
+
+== Chroma
+
+== Langchain
