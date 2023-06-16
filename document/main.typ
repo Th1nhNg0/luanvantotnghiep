@@ -1,3 +1,4 @@
+
 #set page(
     paper:"a4",
     margin: 2.5cm,
@@ -23,8 +24,7 @@
 #pagebreak()
 #include "./content/3_loinoidau.typ"
 #include "./content/4_kienthucchuanbi.typ"
-#include "./content/5_ungdung.typ"
-#include "./content/6_thachthuc.typ"
+#include "./content/5_ungdung_thachthuc.typ"
 #include "./content/7_thunghiem.typ"
 #include "./content/8_ketluan.typ"
 
