@@ -1,4 +1,3 @@
-#pagebreak()
 = Thử nghiệm
 
 == Xây dựng bộ dữ liệu văn bản vi phạm pháp luật
@@ -76,15 +75,86 @@ Mục lục của văn bản là phần quan trọng không thể thiếu. Tuy n
 
 
 
-=== Cấu trúc dữ liệu
+=== Xây dựng cơ sở dữ liệu
+
+Cấu trúc dữ liệu của datasets gồm 3 bảng chính: `VanBan`, `LuocDo`, `ChiMuc` được mô tả như sau:
+
+#figure(
+  table(
+    columns: (auto,auto,1fr),
+    align: left,
+    [*Tên trường*], [*Kiểu dữ liệu*], [*Mô tả*],
+    [id], [integer (PK)], [ID của văn bản],
+    [ten_van_ban], [string], [Tên văn bản],
+    [so_hieu_van_ban], [string], [Số hiệu văn bản],
+    [loai_van_ban], [string], [Loại văn bản],
+    [noi_ban_hanh], [string], [Nơi ban hành],
+    [nguoi_ky], [string], [Người ký],
+    [ngay_ban_hanh], [date], [Ngày ban hành],
+    [ngay_hieu_luc], [date], [Ngày hiệu lực],
+    [ngay_cong_bao], [date], [Ngày công báo],
+    [so_cong_bao], [string], [Số công báo],
+    [noi_dung_van_bang], [string], [Nội dung văn bản dạng text],
+    [linh_vuc], [string], [Lĩnh vực của văn bản],
+  ),
+  caption: [
+    Bảng `VanBan` chứa thông tin về văn bản vi phạm pháp luật
+  ]
+)
+
+#figure(
+  table(
+    align: left,
+    columns: (auto,auto,1fr),
+    [*Tên trường*], [*Kiểu dữ liệu*], [*Mô tả*],
+    [source], [integer (FK)], [ID của văn bản nguồn],
+    [target], [integer (FK)], [ID của văn bản đích],
+    [loai_quan_he], [string], [Loại quan hệ giữa văn bản nguồn và văn bản đích. VD: thay thế, hướng dẫn, sửa đổi bổ sung...],
+  ),
+  caption: [
+   Bảng `LuocDo` chứa thông tin về mối quan hệ giữa các văn bản vi phạm pháp luật
+  ]
+)
+
+#figure(
+  table(
+    align: left,
+    columns: (auto,auto,1fr),
+    [*Tên trường*], [*Kiểu dữ liệu*], [*Mô tả*],
+    [ten_chi_muc], [string], [Tên của chỉ mục],
+    [loai_chi_muc], [string], [Loại của mục lục. VD: phần, chương, mục, điều, khoản, điểm...],
+    [start_index], [integer], [Vị trí bắt đầu của nội dung của chỉ mục trong văn bản],
+    [end_index], [integer], [Vị trí kết thúc của nội dung của chỉ mục trong văn bản],
+    [parent_id], [integer (FK)], [ID của chỉ mục cha (nếu có), thể hiển tree structure#footnote([Tree structure hay cây là một cấu trúc dữ liệu được sử dụng rộng rãi gồm một tập hợp các nút (node) được liên kết với nhau theo quan hệ cha-con]).],
+    [vanban_id], [integer (FK)], [ID của văn bản],
+  ),
+  caption: [
+    Bảng `ChiMuc`: chứa thông tin về mục lục của văn bản vi phạm pháp luật.
+  ]
+)
 
 #figure(
   image("../images/csdl.svg", width: 70%, ),
   caption: [
-    Cấu trúc dữ liệu của văn bản vi phạm pháp luật
+    Cấu trúc dữ liệu của cơ sở dữ liệu văn bản vi phạm pháp luật
   ]
 )
 
+*Xử lý văn bản:* Văn bản sau khi tải xuống có định dạng HTML#footnote([HTML là viết tắt của cụm từ Hypertext Markup Language (tạm dịch là Ngôn ngữ đánh dấu siêu văn bản). HTML được sử dụng để tạo và cấu trúc các thành phần trong trang web hoặc ứng dụng, phân chia các đoạn văn, heading, titles, blockquotes…]), do đó cần phải xử lý để lấy được nội dung văn bản dạng text. Để làm được điều này, tôi sử dụng thư viện BeautifulSoup@richardson2007beautiful để lấy nội dung dạng text của văn bản.
+
+#let example_text = read("../data/bo-luat-lao-dong-2019/content.txt")
+#let example_text=example_text.split("\n")
+
+#figure(
+  block(
+    stroke: 1pt,
+    inset: 10pt,
+    align(left)[#example_text.slice(0,20).join("\n")......]
+  ),
+  caption: [
+    Văn bản sau khi xử lý 
+  ]
+)
 
 
 Trong phạm vi của bài luận này, tôi chỉ sử dụng các văn bản liên quan tới lĩnh vực bảo hiểm xã hội và việc làm để thử nghiệm và đánh giá:
