@@ -3,7 +3,7 @@ typst.exe
 !main.pdf
 code/documents
 code/urls.txt
-
+code/items.jsonl.gz 
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

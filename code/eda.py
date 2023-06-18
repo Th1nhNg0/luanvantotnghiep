@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import plotly.express as px
 import string
-df = pd.read_json('paper/new-data/answers.jsonl', lines=True)
+df = pd.read_json('./answers.jsonl', lines=True)
 law_id = dict()
 
 for answer in df['answers'].tolist():

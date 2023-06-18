@@ -1,1 +1,1 @@
-from law_query.process import LawQuery, Tree
+from law_query_private.process import LawQuery, Tree

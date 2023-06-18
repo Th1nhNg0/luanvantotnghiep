@@ -1,13 +1,7 @@
 = Kiến thức chuẩn bị
 
-== Hệ thống pháp luật Việt Nam
 
-Hệ thống pháp luật Việt Nam là tổng thể những quy phạm pháp luật, các nguyên tắc, định hướng, mục đích của pháp luật có mối liên hệ mật thiết, thống nhất với nhau và được phân định thành các ngành luật, các chế định pháp luật và được thể hiện trong những văn bản do cơ quan nhà nước Việt Nam có thẩm quyền ban hành theo các hình thức, thủ tục nhất định để điều chỉnh các quan hệ xã hội phát sinh trên lãnh thổ Việt Nam.
-
-Hê thống pháp luật bao gồm   hệ thống cấu trúc bên ngoài ( Hệ thống văn bản quy phạm pháp luật ) và  hệ thống cấu trúc bên trong ( Hệ thống các ngành luật )
-
-
-=== Hệ thống văn bản quy phạm pháp luật
+== Hệ thống văn bản quy phạm pháp luật
 
 Hệ thống những văn bản quy phạm pháp luật là hình thức biểu hiện mối liên hệ bên ngoài của pháp luật thông qua các loại văn bản quy phạm pháp luật có giá trị cao thấp khác nhau được các cơ quan Nhà nước có thẩm quyền ban hành theo một trình tự, thủ tục do pháp luật quy định, nhưng đều tồn tại trong thể thống nhất.
 
@@ -38,46 +32,6 @@ Theo Hiến pháp năm 2013 @hien-phap-2013, Luật Ban hành văn bản quy ph�
 15. Nghị quyết của Hội đồng nhân dân xã, phường, thị trấn (sau đây gọi chung là cấp xã).
 16. Quyết định của Ủy ban nhân dân cấp xã.
 
-=== Hệ thống các ngành luật 
-
-Hệ thống các ngành luật là tổng thể những quy phạm pháp luật có mối liên hệ nội tại thống nhất, phối hợp với nhau được phân chia thành những chế định pháp luật và các ngành luật.
-
-*Quy phạm pháp luật* là quy tắc xử sự chung, có hiệu lực bắt buộc chung, được áp dụng lặp đi lặp lại nhiều lần đối với cơ quan, tổ chức, cá nhân trong phạm vi cả nước hoặc đơn vị hành chính nhất định, do cơ quan nhà nước, người có thẩm quyền quy định trong Luật Ban hành văn bản quy phạm pháp luật ban hành và được Nhà nước bảo đảm thực hiện.
-
-Cấu trúc của quy phạm pháp luật là cơ cấu bên trong, là những bộ phận hợp thành quy phạm pháp luật. Cấu trúc của quy phạm pháp luật đòi hỏi cần được trình bày chặt chẽ, ngắn gọn, có sự khái quát giúp người đọc dễ hiểu và dễ nhớ. Chính vì vậy, quy phạm pháp luật thường được trình bày dựa theo một cơ cấu nhất định, gồm 3 bộ phận cấu thành là giả định, quy định, chế tài.
-
-*Giả định* là một bộ phận của quy phạm pháp luật nêu lên các phạm vi tác động của quy phạm pháp luật. Tức là trong đó nêu rõ những hoàn cảnh và điều kiện có thể xảy ra trong cuộc sống và những cá nhân, tổ chức nào khi ở hoàn cảnh điều kiện đó phải chịu sự chi phối của quy phạm pháp luật đó.
-Nội dung bộ phận giả định của quy phạm pháp luật hay đề cập đến chủ thể, phạm vi không gian, thời gian, những trường hợp, hoàn cảnh và điều kiện nhất định của đời sống xã hội…Phần giả định giúp ta trả lời được các câu hỏi: Ai (cá nhân và tổ chức nào)? Khi nào? Trong điều kiện, hoàn cảnh nào?
-
-*Quy định* là một bộ phận của quy phạm pháp luật, trong đó nêu lên cách xử sự mà chủ thể khi ở vào điều kiện, hoàn cảnh đã xác định trong bộ phận giả định của quy phạm pháp luật được phép và không được phép hoặc buộc phải thực hiện.
-Bộ phận quy định của quy phạm pháp luật thường trả lời cho các câu hỏi như: Được làm gì? Không được làm gì? Làm như thế nào? Phải làm gì?
-
-*Chế tài* là một bộ phận của quy phạm pháp luật nêu lên những biện pháp tác động mà nhà nước dự kiến được áp dụng đối với chủ thể đã không thực hiện đúng bộ phận quy định của quy phạm pháp luật để đảm bảo cho pháp luật được thực hiện nghiêm minh.
-
-*Chế định pháp luật* là một tập hợp gồm hai hay các quy phạm pháp luật điều chỉnh một nhóm quan hệ xã hội có tính chất chung, đồng thời có liên hệ mật thiết với nhau.
-
-*Ngành luật* là tổng hợp những chế định pháp luật điều chỉnh các nhóm quan hệ xã hội cùng tính chất.
-Một số nhóm quan hệ xã hội có cùng tính chất hợp thành đối tượng nhằm điều chỉnh của một ngành luật.
-
-*Hệ thống các ngành luật* là tổng hợp những ngành luật có quan hệ thống nhất nội tại, đồng thời phối hợp với nhau nhằm điều chỉnh các quan hệ trong các lĩnh vực khác nhau.
-
-Ở nước ta hiện nay có các ngành luật cụ thể như sau:
-
-- Luật hành chính gồm tổng thể các quy phạm pháp luật điều chỉnh những quan hệ xã hội hình thành trong quá trình tổ chức, thực hiện hoạt động chấp hành – điều hành của Nhà nước trên từng lĩnh vực của đời sống xã hội. Đó là những quan hệ xã hội nảy sinh trong quá trình quản lý nhà nước.
-- Luật Nhà nước là tổng thể những quy phạm pháp luật điều chỉnh các quan hệ cơ bản về tổ chức quyền lực Nhà nước, về chế độ chính trị, văn hóa – xã hội, kinh tế, chế độ bầu cử, quyền, nghĩa vụ cơ bản của công dân,…
-- Luật đất đai gồm các quy phạm pháp luật điều chỉnh những quan hệ xã hội hình thành trong lĩnh vực bảo vệ và quản lý và sử dụng đất.
-- Luật dân sự gồm các quy phạm pháp luật điều chỉnh những quan hệ tài sản dưới hình thức hàng hóa – tiền tệ. Một số quan hệ nhân thân phi tài sản như quyền sáng chế và phát minh khoa học công nghệ, sáng tác các tác phẩm và văn học nghệ thuật.
-- Luật tài chính gồm các quy phạm pháp luật điều chỉnh những quan hệ xã hội phát sinh trong lĩnh vực hoạt động thu chi tài chính của Nhà nước.
-- Luật hôn nhân và gia đình gồm các quy phạm pháp luật điều chỉnh những quan hệ xã hội trong hôn nhân và gia đình (quan hệ nhân thân, quan hệ tài sản phát sinh do việc kết hôn giữa nam và nữ).
-- Luật lao động gồm các quy phạm pháp luật điều chỉnh những quan hệ xã hội phát sinh giữa người lao động, người sử dụng lao động (cá nhân hoặc tổ chức) trong các quan hệ trực tiếp làm ra của cải vật chất cho xã hội.
-- Luật tố tụng dân sự gồm những quy phạm pháp luật điều chỉnh những quan hệ giữa cơ quan xét xử, viện kiểm sát nhân dân các cấp, đương sự và những người tham gia khác trong quá trình điều tra và xét xử những vụ án dân sự.
-- Luật hình sự gồm những quy phạm pháp luật quy định hành vi nào là tội phạm và phải chịu hình phạt như thế nào.
-- Luật tố tụng hình sự gồm các quy phạm pháp luật điều chỉnh những quan hệ xã hội phát sinh trong việc điều tra, truy tố và xét xử những vụ án hình sự.
-- Luật kinh tế là tổng thể các quy phạm pháp luật điều chỉnh những quan hệ kinh tế phát sinh trong quá trình quản lý và lãnh đạo họat động kinh tế của Nhà nước, cũng như trong hoạt động kinh doanh giữa các tổ chức, đơn vị kinh tế.
-
-Ngoài hệ thống pháp luật của mỗi quốc gia còn tồn tại hệ thống pháp luật quốc tế. Những quy phạm của luật quốc tế được hình thành dựa trên cơ sở thỏa thuận giữa các quốc gia, đồng thời thể hiện ý chí chung của quốc gia đó. Luật quốc tế bao gồm:
-- Công pháp quốc tế là tổng hợp các nguyên tắc, những chế định và những quy phạm được các quốc gia và những chủ thể khác của luật quốc tế xây dựng nên trên cơ sở thỏa thuận tự nguyện, bình đẳng.
-- Tư pháp quốc tế bao gồm các nguyên tắc, quy phạm pháp luật điều chỉnh những quan hệ dân sự, hôn nhân – gia đình, thương mại, lao động và tố tụng dân sự nảy sinh giữa các công dân và các tổ chức thuộc các nước khác nhau.
 
 == Large Language Model
 
@@ -89,8 +43,49 @@ Một ví dụ của LLM là GPT, viết tắt của Generative Pre-trained Tran
 
 Generative Pre-trained Transformer (GPT), một loại mô hình học sâu có khả năng sinh văn bản tự động dựa trên dữ liệu huấn luyện lớn. GPT được phát triển bởi OpenAI #footnote([OpenAI là một tổ chức nghiên cứu trí tuệ nhân tạo phi lợi nhuận được thành lập vào tháng 12 năm 2015, có trụ sở tại San Francisco, California. OpenAI được thành lập bởi Elon Musk, Sam Altman và các nhà nghiên cứu khác, với mục tiêu "điều tra và thúc đẩy một trí tuệ nhân tạo thân thiện với con người]). GPT có nhiều phiên bản khác nhau, từ GPT-1 ra mắt vào năm 2018 đến GPT-3 ra mắt vào năm 2020. Mỗi phiên bản đều có số lượng tham số và khả năng sinh văn bản cao hơn phiên bản trước. Ví dụ, GPT-3 có 175 tỷ tham số và có thể sinh văn bản với độ dài tối đa là 2048 từ. GPT có thể áp dụng cho nhiều ứng dụng khác nhau, như viết tiêu đề, tóm tắt, bài luận, thơ, hội thoại và nhiều thứ khác. Ví dụ, GPT-3 có thể viết một bài luận ngắn về tác dụng của việc đọc sách hoặc một câu chuyện ngắn về một chú mèo tên Tom. GPT là một trong những mô hình học sâu tiên tiến nhất hiện nay trong lĩnh vực xử lý ngôn ngữ tự nhiên.
 
-== ChatGPT
+== Embeddings
 
+Embedding là một kỹ thuật biểu diễn các nội dung số như hình, chữ, âm thanh thành một danh sách các con số (vector). Quá trình này giúp cho các machine learning model có thể "hiểu" được nội dung đó.
+
+Embeddings thường được sử dụng trong các ứng dụng như:
+- Search (kết quả được sắp xếp theo mức độ liên quan đến một chuỗi truy vấn)
+- Clustering (các chuỗi văn bản được nhóm lại theo độ tương tự)
+- Recommendations (các mục có chuỗi văn bản liên quan được đề xuất)
+- Anomaly detection (các điểm ngoại lệ có độ tương tự thấp được xác định)
+- Diversity measurement (phân tích phân phối độ tương tự)
+- Classification (các chuỗi văn bản được phân loại theo nhãn tương tự nhất)
+
+Khoảng cách giữa hai vector đo lường mức độ liên quan của chúng. Khoảng cách nhỏ cho thấy mức độ liên quan cao và khoảng cách lớn cho thấy mức độ liên quan thấp.
+
+
+== Chroma
+
+Chroma là một cơ sở dữ liệu nhúng mã nguồn mở được thiết kế để lưu trữ các vector nhúng (embeddings) và cho phép tìm kiếm các vector gần nhất thay vì tìm kiếm theo chuỗi con như một cơ sở dữ liệu truyền thống. 
+
+Chroma cung cấp các công cụ để:
+- Lưu trữ embeddings và metadata (dữ liệu mô tả) của chúng
+- Nhúng tài liệu và truy vấn
+- Tìm kiếm embeddings
+
+#figure(
+    image("../images/chroma.svg"),
+    caption: [
+        Cơ sở dữ liệu Chroma
+    ]
+)
+
+== Langchain
+
+Langchain là một framework được sinh ra để tận dụng sức mạnh của các mô hình ngôn ngữ lớn LLM như ChatPGT, LLaMA… để tạo ra các ứng dụng trong thực tế. Nó giúp cho việc tương tác với các mô hình ngôn ngữ lớn trở nên dễ dàng hơn và cho phép các ứng dụng tận dụng thêm các thông tin từ nhiều nguồn data khác của bên thứ 3 như Google, Notion, Facebook… cũng như cung cấp các component cho phép sử dụng các language model trong nhiều tình huống khác nhau trên thực tế.
+
+#figure(
+    image("../images/flowise.png"),
+    caption: [
+        Flowise, visual tool để xây dựng các ứng dụng LLM, được xây dựng trên nền tảng Langchain
+    ]
+)
+
+== ChatGPT
 
 ChatGPT là một chatbot AI hoạt động dựa trên mô hình GPT-3.5 được phát triển bởi OpenAI. ChatGPT có khả năng tương tác với người dùng thông qua việc trả lời các câu hỏi và hoàn thành các tác vụ liên quan đến ngôn ngữ như viết kịch bản, lời thoại, dịch thuật, tìm kiếm thông tin,... mà không giới hạn về chủ đề. ChatGPT được đào tạo bằng phương pháp Học tăng cường từ phản hồi của con người (RLHF – Reinforcement Learning from Human Feedback)@lambert2022illustrating, nên có thể hiểu ngữ cảnh, ghi nhớ thông tin người dùng nói, dự đoán nhu cầu của họ để đưa ra các phản hồi chính xác nhất. ChatGPT là một ứng dụng nổi bật của GPT-3, một trong những mô hình xử lý ngôn ngữ tự nhiên (Natural Language Processing) tiên tiến nhất hiện nay. ChatGPT có thể được áp dụng cho nhiều lĩnh vực khác nhau như chăm sóc khách hàng, sáng tạo nội dung, giáo dục,... ChatGPT là một bước tiến quan trọng trong lĩnh vực trí tuệ nhân tạo và có tiềm năng thay đổi cách con người giao tiếp và học tập trong tương lai.
 
@@ -114,6 +109,7 @@ Bing AI không chỉ sinh văn bản dựa theo xác suất như ChatGPT của O
        Giao diện của Bing AI
     ]
 )
+
 
 == Multimodal Model
 
@@ -165,6 +161,3 @@ Multimodal Model là đề tài nóng của trí tuệ nhân tạo. Ví dụ n�
 ]
 
 
-== Chroma
-
-== Langchain

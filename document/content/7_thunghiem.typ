@@ -183,7 +183,9 @@ Mục lục của văn bản là phần quan trọng không thể thiếu. Tuy n
   ]
 )
 
-Để đơn giản hóa trong việc lập trình, tôi lưu kết quả sau khi xử lý thành định dạng JSON#footnote([JSON là viết tắt của Javascript Object Notation, là một bộ quy tắc về cách trình bày và mô tả dữ liệu trong một chuỗi lớn thống nhất được gọi chung là chuỗi JSON. Chuỗi JSON được bắt đầu bằng ký tự { và kết thúc bởi ký tự }]):
+Phương pháp sử dụng regex tuy tốt nhưng vẫn chỉ là bán tự động, vì có một số trường hợp đặc biết vẫn cần sự can thiệp từ con người để có được kết quả tốt nhất.
+
+Để đơn giản khi lập trình, tôi lưu kết quả sau khi xử lý thành định dạng JSON#footnote([JSON là viết tắt của Javascript Object Notation, là một bộ quy tắc về cách trình bày và mô tả dữ liệu trong một chuỗi lớn thống nhất được gọi chung là chuỗi JSON. Chuỗi JSON được bắt đầu bằng ký tự { và kết thúc bởi ký tự }]):
 
 #let result = read("../data/luat-bao-hiem-xa-hoi-2014/tree.json")
 #figure(
@@ -200,5 +202,7 @@ Mục lục của văn bản là phần quan trọng không thể thiếu. Tuy n
 )
 
 == Xây dựng bộ dữ liệu câu hỏi luật
+
+
 
 == Tra cứu văn bản luật bằng ChatGPT API

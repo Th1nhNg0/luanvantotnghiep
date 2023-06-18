@@ -1,10 +1,12 @@
 import re
 import json
 import gzip
+import uuid
 
 
 class Node:
     def __init__(self, name, content, node_type, node_id, parent=None):
+        self.id = str(uuid.uuid4())
         self.name = name
         self.content = content
         self.node_id = node_id
@@ -32,6 +34,7 @@ class Node:
 
     def asdict(self):
         return {
+            'id': self.id,
             'name': self.name,
             'node_id': self.node_id,
             'node_type': self.node_type,
@@ -166,6 +169,7 @@ class Tree:
         if pivot == -1 and node.node_type != 'root':
             print('❌', node.name)
         return {
+            'id': node.id,
             'name': node.name,
             'node_id': node.node_id,
             'node_type': node.node_type,

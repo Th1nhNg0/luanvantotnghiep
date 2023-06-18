@@ -14,7 +14,7 @@ Tôi cũng tri ân đến bạn Lê Huy Hoàng, đã hỗ trợ tôi rất nhi�
 
 Nhân dịp này tôi xin gửi lời cảm ơn đến quý thầy cô ở khoa Toán - Tin học đã nhiệt tình truyền đạt cho tôi những kiến thức từ cơ bản đến chuyên sâu trong suốt quá trình học tập tại Khoa. Những kiến thức tích lũy được ở Khoa đã giúp tôi có nền tảng vững vàng cho việc phát triển tương lai sau này.
 
-Cuối cùng, tôi xin cảm ơn gia đình, người thân, bạn bè đã luôn bên cạnh, uổng hộ, động viên.
+Cuối cùng, tôi xin cảm ơn gia đình, người thân, bạn bè đã luôn bên cạnh, ủng hộ, động viên.
 
 #align(right)[
     _Tp.HCM, ngày 12 tháng 6 năm 2023_ \
