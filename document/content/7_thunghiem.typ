@@ -1,8 +1,15 @@
 = Thử nghiệm
 
+Trong phạm vi của bài luận này, tôi chỉ sử dụng các văn bản liên quan tới lĩnh vực bảo hiểm xã hội và việc làm để thử nghiệm và đánh giá:
+
+#let luat_su_dung=csv("../data/luat_su_dung.csv")
+#list(
+  ..luat_su_dung.flatten()
+)
+
 == Xây dựng bộ dữ liệu văn bản vi phạm pháp luật
 
-=== Sơ lược về dữ liệu
+=== Sơ lược về dữ liệu <soluocdulieu>
 
 #let tvpl_loaivanban = csv("../data/tvpl_loaivanban.csv")
 #let tvpl_linhvuc = csv("../data/tvpl_linhvuc.csv")
@@ -77,7 +84,7 @@ Mục lục của văn bản là phần quan trọng không thể thiếu. Tuy n
 
 === Xây dựng cơ sở dữ liệu
 
-Cấu trúc dữ liệu của datasets gồm 3 bảng chính: `VanBan`, `LuocDo`, `ChiMuc` được mô tả như sau:
+*Cấu trúc dữ liệu* của datasets gồm 3 bảng chính: `VanBan`, `LuocDo`, `ChiMuc` được mô tả như sau:
 
 #figure(
   table(
@@ -142,31 +149,55 @@ Cấu trúc dữ liệu của datasets gồm 3 bảng chính: `VanBan`, `LuocDo`
 
 *Xử lý văn bản:* Văn bản sau khi tải xuống có định dạng HTML#footnote([HTML là viết tắt của cụm từ Hypertext Markup Language (tạm dịch là Ngôn ngữ đánh dấu siêu văn bản). HTML được sử dụng để tạo và cấu trúc các thành phần trong trang web hoặc ứng dụng, phân chia các đoạn văn, heading, titles, blockquotes…]), do đó cần phải xử lý để lấy được nội dung văn bản dạng text. Để làm được điều này, tôi sử dụng thư viện BeautifulSoup@richardson2007beautiful để lấy nội dung dạng text của văn bản.
 
-#let example_text = read("../data/bo-luat-lao-dong-2019/content.txt")
+#let example_text = read("../data/luat-bao-hiem-xa-hoi-2014/content.txt")
 #let example_text=example_text.split("\n")
 
 #figure(
   block(
     stroke: 1pt,
     inset: 10pt,
-    align(left)[#example_text.slice(0,20).join("\n")......]
+    align(left)[#example_text.slice(0,18).join("\n")......]
   ),
   caption: [
     Văn bản sau khi xử lý 
   ]
 )
 
+*Tạo mục lục:* để tạo chỉ mục cho văn bản, tôi sử dụng regex#footnote([Regex là một chuỗi các ký tự đặc biệt được định nghĩa để tạo nên các mẫu (pattern) và được sử dụng để tìm kiếm và thay thế các chuỗi trong một văn bản]) để tìm kiếm các chỉ mục trong văn bản. Như đã nêu trong @soluocdulieu các regex để tìm chỉ mục là:
 
-Trong phạm vi của bài luận này, tôi chỉ sử dụng các văn bản liên quan tới lĩnh vực bảo hiểm xã hội và việc làm để thử nghiệm và đánh giá:
 
-#let luat_su_dung=csv("../data/luat_su_dung.csv")
-#list(
-  ..luat_su_dung.flatten()
+#figure(
+  table(
+    columns: (auto,auto,1fr),
+    align: left + horizon,
+    [*Regex*],[*Loại chỉ mục*],[*Chú giải*],
+    [^(Phần thứ [\\d\\w]+.\*)\$],[Phần],[Tìm các chỉ mục có dạng "Phần thứ \<số|chữ> \<nội dung>". Ví dụ:\ "Phần thứ nhất: Những quy định chung"],
+    [^(Chương [\\d\\w]+.\*)\$],[Chương],[Tìm các chỉ mục có dạng "Chương \<số|chữ> \<nội dung>". Ví dụ:\ "Chương I: ĐIỀU KHOẢN CƠ BẢN"], 
+    [^(Mục [\\d|I|V|X|L|C|D|M]+.\*)\$],[Mục],[Tìm các chỉ mục có dạng "Mục \<số|chữ số la mã> \<nội dung>". Ví dụ:\ "Mục 1. QUY ĐỊNH CHUNG VỀ QUYẾT ĐỊNH HÌNH PHẠT"],
+    [^(Điều \\d+.\*)\$],[Điều],[Tìm các chỉ mục có dạng "Điều \<số> \<nội dung>". Ví dụ:\ "Điều 51. Các tình tiết giảm nhẹ trách nhiệm hình sự"],
+    [^(\\d+\\. .\*)\$],[Khoản],[Tìm các chỉ mục có dạng "\<số>. \<nội dung>". Ví dụ:\ 1. Người phạm tội phải trả lại tài sản đã...],
+    [^(\\w\\).\*)\$],[Điểm],[tìm các chỉ mục có dạng "\<chữ>. \<nội dung>". Ví dụ:\ a\) Người phạm tội đã ngăn chặn h...]
+  ),
+  caption: [
+    Các regex để tìm chỉ mục trong văn bản
+  ]
 )
 
+Để đơn giản hóa trong việc lập trình, tôi lưu kết quả sau khi xử lý thành định dạng JSON#footnote([JSON là viết tắt của Javascript Object Notation, là một bộ quy tắc về cách trình bày và mô tả dữ liệu trong một chuỗi lớn thống nhất được gọi chung là chuỗi JSON. Chuỗi JSON được bắt đầu bằng ký tự { và kết thúc bởi ký tự }]):
 
-
-
+#let result = read("../data/luat-bao-hiem-xa-hoi-2014/tree.json")
+#figure(
+  block(
+    clip:true,
+    stroke: 1pt,
+    inset: 10pt,
+    align(left)[#raw(result,lang: "json")]
+  ),
+  kind: image,
+  caption: [
+    Kết quả sau khi xử lý văn bản ở định dạng JSON
+  ]
+)
 
 == Xây dựng bộ dữ liệu câu hỏi luật
 

@@ -1,0 +1,46 @@
+{
+  "id":1,
+  "ten_van_ban": "Luật Bảo hiểm xã hội 2014",
+  "so_hieu_van_ban": "58/2014/QH13",
+  "loai_van_ban": "Luật",
+  "linh_vuc": "Bảo hiểm, Lao động - Tiền lương",
+  "noi_ban_hanh": "Quốc hội",
+  "nguoi_ky": "Nguyễn Sinh Hùng",
+  "ngay_ban_hanh": "20/11/2014",
+  "ngay_hieu_luc": "01/01/2016",
+  "ngay_cong_bao": "29/12/2014",
+  "so_cong_bao": "Từ số 1163 đến số 1164",
+  "noi_dung_van_ban":"...",
+  "tree": {
+    "ten_chi_muc": "Luật Bảo hiểm xã hội 2014",
+    "loai_chi_muc": "root",
+    "start_index": 0,
+    "end_index": 110927,
+    "children": [
+      {
+        "ten_chi_muc": "Chương I:NHỮNG QUY ĐỊNH CHUNG",
+        "loai_chi_muc": "chương",
+        "start_index": 280,
+        "end_index": 14742,
+        "children": [
+          {
+            "ten_chi_muc": "Điều 1. Phạm vi điều chỉnh",
+            "loai_chi_muc": "điều",
+            "start_index": 307,
+            "end_index": 681,
+            "children": []
+          },
+          {
+            "ten_chi_muc": "Điều 2. Đối tượng áp dụng",
+            "loai_chi_muc": "điều",
+            "start_index": 708,
+            "end_index": 3086,
+            "children": [...]
+          },
+          ...
+        ]
+      }
+      ...
+    ]
+  }
+}

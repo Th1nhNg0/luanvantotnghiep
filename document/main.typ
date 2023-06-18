@@ -1,4 +1,3 @@
-
 #set page(
     paper:"a4",
     margin: 2.5cm,
