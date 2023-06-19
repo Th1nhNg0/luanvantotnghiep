@@ -1,18 +1,9 @@
-= Thử nghiệm
-
-Trong phạm vi của bài luận này, tôi chỉ sử dụng các văn bản liên quan tới lĩnh vực bảo hiểm xã hội và việc làm để thử nghiệm và đánh giá:
-
-#let luat_su_dung=csv("../data/luat_su_dung.csv")
-#list(
-  ..luat_su_dung.flatten()
-)
-
 == Xây dựng bộ dữ liệu văn bản vi phạm pháp luật
 
 === Sơ lược về dữ liệu <soluocdulieu>
 
-#let tvpl_loaivanban = csv("../data/tvpl_loaivanban.csv")
-#let tvpl_linhvuc = csv("../data/tvpl_linhvuc.csv")
+#let tvpl_loaivanban = csv("../../data/tvpl_loaivanban.csv")
+#let tvpl_linhvuc = csv("../../data/tvpl_linhvuc.csv")
 
 
 Theo dữ liệu từ Thư viện pháp luật#footnote([thuvienphapluat.vn là trang chuyên cung cấp cơ sở dữ liệu, tra cứu và thảo luận pháp luật]), hiện nay Việt Nam có khoảng 303936 văn bản vi phạm pháp luật. Bao gồm #tvpl_loaivanban.len() loại văn bản và #tvpl_linhvuc.len() lĩnh vực khác nhau:
@@ -141,7 +132,7 @@ Mục lục của văn bản là phần quan trọng không thể thiếu. Tuy n
 )
 
 #figure(
-  image("../images/csdl.svg", width: 70%, ),
+  image("../../images/csdl.svg", width: 70%, ),
   caption: [
     Cấu trúc dữ liệu của cơ sở dữ liệu văn bản vi phạm pháp luật
   ]
@@ -149,7 +140,7 @@ Mục lục của văn bản là phần quan trọng không thể thiếu. Tuy n
 
 *Xử lý văn bản:* Văn bản sau khi tải xuống có định dạng HTML#footnote([HTML là viết tắt của cụm từ Hypertext Markup Language (tạm dịch là Ngôn ngữ đánh dấu siêu văn bản). HTML được sử dụng để tạo và cấu trúc các thành phần trong trang web hoặc ứng dụng, phân chia các đoạn văn, heading, titles, blockquotes…]), do đó cần phải xử lý để lấy được nội dung văn bản dạng text. Để làm được điều này, tôi sử dụng thư viện BeautifulSoup@richardson2007beautiful để lấy nội dung dạng text của văn bản.
 
-#let example_text = read("../data/luat-bao-hiem-xa-hoi-2014/content.txt")
+#let example_text = read("../../data/luat-bao-hiem-xa-hoi-2014/content.txt")
 #let example_text=example_text.split("\n")
 
 #figure(
@@ -187,7 +178,7 @@ Phương pháp sử dụng regex tuy tốt nhưng vẫn chỉ là bán tự đ�
 
 Để đơn giản khi lập trình, tôi lưu kết quả sau khi xử lý thành định dạng JSON#footnote([JSON là viết tắt của Javascript Object Notation, là một bộ quy tắc về cách trình bày và mô tả dữ liệu trong một chuỗi lớn thống nhất được gọi chung là chuỗi JSON. Chuỗi JSON được bắt đầu bằng ký tự { và kết thúc bởi ký tự }]):
 
-#let result = read("../data/luat-bao-hiem-xa-hoi-2014/tree.json")
+#let result = read("../../data/luat-bao-hiem-xa-hoi-2014/tree.json")
 #figure(
   block(
     clip:true,
@@ -201,8 +192,47 @@ Phương pháp sử dụng regex tuy tốt nhưng vẫn chỉ là bán tự đ�
   ]
 )
 
-== Xây dựng bộ dữ liệu câu hỏi luật
+Sau khi xây dựng được datasets về luật, tôi có tạo thêm một python package dùng để truy vấn dữ liệu một cách dễ dàng @Ngo_LawQuery:
 
+#figure(
+  block(
+    stroke: 1pt,
+    inset: 10pt,
+  )[```py
+from lawquery import Engine
 
-
-== Tra cứu văn bản luật bằng ChatGPT API
+# create engine, law_id là số hiệu của văn bản luật
+engine = Engine(law_id='58/2014/QH13')
+# query single node
+engine.query(node_type='điều', node_id='1')
+# => [Điều 1. Phạm vi điều chỉnh]
+engine.query(node_type='phần')
+# => [Phần thứ nhất..., Phần thứ hai...]
+engine.query(name='hôn nhân')
+# => [Điều 67. Các trường hợp hưởng trợ cấp tuất hằng tháng]
+# query by path: from parent to child
+node = engine.query_by_path([
+    {
+        'node_type': 'phần',
+        'node_id': 'hai'
+    },
+    {
+        'node_type': 'chương',
+        'node_id': 'I'
+    },
+    {
+        'node_type': 'mục',
+        'node_id': '1'
+    },
+    {
+        'node_type': 'điều',
+        'node_id': '50'
+    }])
+# => [Điều 50. Trợ cấp phục vụ]
+node.content
+# => Nội dung của điều luật
+```],
+  caption: [
+    Sử dụng package `lawquery` để truy vấn dữ liệu
+  ]
+)

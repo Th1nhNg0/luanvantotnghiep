@@ -24,7 +24,7 @@
 #include "./content/3_loinoidau.typ"
 #include "./content/4_kienthucchuanbi.typ"
 #include "./content/5_ungdung_thachthuc.typ"
-#include "./content/7_thunghiem.typ"
+#include "./content/7_thunghiem/main.typ"
 #include "./content/8_ketluan.typ"
 
 #pagebreak()
