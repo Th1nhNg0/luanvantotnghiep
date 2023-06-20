@@ -7,6 +7,7 @@
         font:"Times New Roman",
         lang:"vi",
         )
+#show raw:set text(font: "Courier New")
 #set heading(
     numbering: "1.1.1.a.",
 )

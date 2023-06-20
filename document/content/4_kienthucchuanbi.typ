@@ -55,8 +55,66 @@ Embeddings thường được sử dụng trong các ứng dụng như:
 - Diversity measurement (phân tích phân phối độ tương tự)
 - Classification (các chuỗi văn bản được phân loại theo nhãn tương tự nhất)
 
+
+
+== TF-IDF
+
+TF-IDF (Term Frequency – Inverse Document Frequency) là 1 kĩ thuật sử dụng trong khai phá dữ liệu văn bản. Trọng số này được sử dụng để đánh giá tầm quan trọng của một từ trong một văn bản. Giá trị cao thể hiện độ quan trọng cao và nó phụ thuộc vào số lần từ xuất hiện trong văn bản nhưng bù lại bởi tần suất của từ đó trong tập dữ liệu. Một vài biến thể của tf-idf thường được sử dụng trong các hệ thống tìm kiếm như một công cụ chính để đánh giá và sắp xếp văn bản dựa vào truy vấn của người dùng.  Tf-idf cũng được sử dụng để lọc những từ stopwords trong các bài toán như tóm tắt văn bản và phân loại văn bản.
+
+*TF: Term Frequency(Tần suất xuất hiện của từ)* là số lần từ xuất hiện trong văn bản. Vì các văn bản có thể có độ dài ngắn khác nhau nên một số từ có thể xuất hiện nhiều lần trong một văn bản dài hơn là một văn bản ngắn. Như vậy, term frequency thường được chia cho độ dài văn bản (tổng số từ trong một văn bản).
+
+$ "TF"(t,d)=(f(t,d))/(max{f(w,d):w in d}) $
+
+Trong đó:
+- $"TF"(t, d)$: tần suất xuất hiện của từ $t$ trong văn bản $d$
+- $f(t, d)$: Số lần xuất hiện của từ $t$ trong văn bản $d$
+- $max({f(w, d) : w in d})$: Số lần xuất hiện của từ có số lần xuất hiện nhiều nhất trong văn bản
+
+*IDF: Inverse Document Frequency(Nghịch đảo tần suất của văn bản)*, giúp đánh giá tầm quan trọng của một từ. Khi tính toán TF, tất cả các từ được coi như có độ quan trọng bằng nhau. Nhưng một số từ như "is","of" và "that" thường xuất hiện rất nhiều lần nhưng độ quan trọng là không cao. Như thế ta cần giảm độ quan trọng của những từ này xuống.
+
+$ "IDF"(t,D) = log abs(D)/abs({d in D:t in d}) $
+
+Trong đó:
+- $"IDF"(t, D)$: giá trị idf của từ t trong tập văn bản
+- $abs(D)$: Tổng số văn bản trong tập $D$
+- $abs({d in D : t in d})$: thể hiện số văn bản trong tập $D$ có chứa từ $t$.
+
+Việc sử dụng logarit nhằm giúp giá trị tf-idf của một từ nhỏ hơn, do công thức tính tf-idf của một từ trong 1 văn bản là tích của tf và idf của từ đó.
+
+Cụ thể, công thức tính tf-idf hoàn chỉnh như sau: 
+$ "TDIDF"(t, d, D) = "TF"(t, d) * "IDF"(t, D) $
+Khi đó những từ có giá trị TF-IDF cao là những từ xuất hiện nhiều trong văn bản này, và xuất hiện ít trong các văn bản khác. Việc này giúp lọc ra những từ phổ biến và giữ lại những từ có giá trị cao (từ khoá của văn bản đó).
+
+== BM25
+
+Phương pháp có tên BM25 (BM – best match), thường gọi "Okapi BM25", vì lần đầu tiên công thức được sử dụng trong hệ thống tìm kiếm Okapi, được sáng lập tại trường đại học London những năm 1980 và 1990.
+
+Công thức tính điểm của BM25 được định nghĩa như sau:
+
+$ "BM25"(D, Q) = sum_(i=1)^n "IDF"(q_i,D) (f(q_i,D)*(k_1+1))/(f(q_i)+k_1*(1-b+b*abs(D)/d_"avg")) $
+
+Trong đó:
+- $f(q_i,D)$: là số lần mà term $q_i$ xuất hiện trong tất cả các tài liệu $D$
+- $abs(D)$ là số từ trong tất cả các tài liệu  $D$
+- $d_"avg"$ là số lượng từ trung bình trong mỗi tài liệu
+- $b$ và $k_1$ là các tham số của BM25
+
+So với thuật toán TF-IDF, BM25 có ưu điểm là có thể xử lý được các văn bản dài. Điều này là do công thức của BM25 có thêm một số tham số như $b$ và $k_1$ để điều chỉnh. Các tham số này giúp cho BM25 có thể xử lý được các văn bản dài hơn.
+
+== Sentence Transformers
+
+Sentence Transformers@reimers-2019-sentence-bert là một python framework cho tác vụ embeddings. Nó được xem là state-of-the-art#footnote(["state-of-the-art" những gì hiện đại và tiên tiến nhất]) trong tác vụ embeddings.
+
+Semantic Search là một ứng dụng của Sentence Transformers. Nó cho phép tìm kiếm các văn bản có nội dung tương tự với một văn bản đầu vào. Để thực hiện ứng dụng này, ta cần có một bộ dữ liệu các văn bản và một mô hình embeddings. Mô hình embeddings này sẽ nhúng các văn bản trong bộ dữ liệu thành các vector. Sau đó, ta sẽ tính khoảng cách giữa vector của văn bản đầu vào với các vector của các văn bản trong bộ dữ liệu.
+
 Khoảng cách giữa hai vector đo lường mức độ liên quan của chúng. Khoảng cách nhỏ cho thấy mức độ liên quan cao và khoảng cách lớn cho thấy mức độ liên quan thấp.
 
+#figure(
+    image("../images/SemanticSearch.png",width: 50%),
+    caption: [
+        Semantic Search
+    ]
+)
 
 == Chroma
 

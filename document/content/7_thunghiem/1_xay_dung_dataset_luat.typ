@@ -1,4 +1,4 @@
-== Xây dựng bộ dữ liệu văn bản vi phạm pháp luật
+== Xây dựng bộ dữ liệu văn bản vi phạm pháp luật <datasetluat>
 
 === Sơ lược về dữ liệu <soluocdulieu>
 
@@ -6,7 +6,7 @@
 #let tvpl_linhvuc = csv("../../data/tvpl_linhvuc.csv")
 
 
-Theo dữ liệu từ Thư viện pháp luật#footnote([thuvienphapluat.vn là trang chuyên cung cấp cơ sở dữ liệu, tra cứu và thảo luận pháp luật]), hiện nay Việt Nam có khoảng 303936 văn bản vi phạm pháp luật. Bao gồm #tvpl_loaivanban.len() loại văn bản và #tvpl_linhvuc.len() lĩnh vực khác nhau:
+Theo dữ liệu từ Thư viện pháp luật#footnote([thuvienphapluat.vn là trang chuyên cung cấp cơ sở dữ liệu, tra cứu và thảo luận pháp luật]), hiện nay Việt Nam có trên dưới 303936 văn bản vi phạm pháp luật. Bao gồm #tvpl_loaivanban.len() loại văn bản và #tvpl_linhvuc.len() lĩnh vực khác nhau:
 
 #figure(
   grid(
