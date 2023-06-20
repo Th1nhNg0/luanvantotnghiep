@@ -5,7 +5,8 @@ import os
 
 
 class Node:
-    def __init__(self, name, content, node_type, node_id, parent=None):
+    def __init__(self, id, name, content, node_type, node_id, parent=None):
+        self.id = id
         self.name = name
         self.content = content
         self.node_id = node_id
@@ -33,6 +34,7 @@ class Node:
 
     def asdict(self):
         return {
+            'id': self.id,
             'name': self.name,
             'node_id': self.node_id,
             'node_type': self.node_type,
@@ -48,7 +50,7 @@ class ITree:
     def _import(self, data: dict) -> Node:
         content = self.raw_text[data['content']
                                 ['start']:data['content']['end']]
-        root = Node(data['name'], content, data['node_type'],
+        root = Node(data['id'], data['name'], content, data['node_type'],
                     data['node_id'])
         for child in data['children']:
             root.add_child(self._import(child))

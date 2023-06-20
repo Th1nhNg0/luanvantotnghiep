@@ -29,6 +29,12 @@ st.dataframe(df)
 st.subheader('Lĩnh vực')
 st.write('Số lượng câu hỏi theo lĩnh vực')
 fig = px.pie(df, names='linhvuc')
+# set fig size
+# title
+fig.update_layout(
+    title={
+        'text': "Số lượng câu hỏi theo lĩnh vực",
+    })
 st.plotly_chart(fig)
 
 # plot law_id
