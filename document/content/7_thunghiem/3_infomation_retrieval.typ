@@ -42,7 +42,7 @@ def format_text(text,word_segmentation=False,remove_punctuation=False):
     caption: [Hàm format_text dùng để chuẩn hóa nội dung]
 )
 
-@ketquatruyxuat1 là kết quả của cách tiếp cận đầu tiên, sử dụng 2 thuật toán cơ bản là TF-IDF và BM25. Với 2 dạng chuẩn hóa: sử dụng word segmentation và không sử dụng word segmentation. Kết quả chưa được tốt, nhất là ở $k=5$ 
+@ketquatruyxuat1 là kết quả của cách tiếp cận đầu tiên, sử dụng 2 thuật toán cơ bản là TF-IDF và BM25. Với 2 dạng chuẩn hóa: sử dụng word segmentation và không sử dụng word segmentation. Kết quả của phương pháp này chưa được tốt.
 
 #let ketqua = csv("../../data/retrieval_result.csv")
 
