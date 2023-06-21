@@ -6,7 +6,16 @@ Dựa vào dữ liệu đã thu thập được ở @datasetluat và @datasetqa.
 - Đầu ra: danh sách các nội dung liên quan có thể trả lời cho câu hỏi đó
 
 
-*Hướng tiếp cận thứ 1*: Sử dụng các thuật toán cơ bản như TF-IDF và BM25, để tính toán độ tương đồng giữa câu hỏi và các nội dung trong dataset. Sau đó, sắp xếp các nội dung theo độ tương đồng giảm dần và trả về kết quả.
+*Metric Evaluation:* Để đánh giá kết quả, metric $"Top"_K@"acc"$ được sử dụng. Độ chính xác được tính bằng tỷ lệ các nội dung đúng (nội dung dùng để trả lời cho câu hỏi) xuất hiện trong $K$ kết quả trả về. Cụ thể công thức:
+
+$ "Top"_K@"acc"=1/n sum_1^n cases(1\, l_q subset.eq L_K,0\,"otherwise") $
+
+Trong đó:
+
+- $L_K$: là tập hợp chứa $K$ nhãn có nội dung với độ tương đồng lớn nhất với câu hỏi $q$
+- $l_q$: là tập hợp các nội dung đúng của câu hỏi $q$
+
+*Hướng tiếp cận thứ 1:* Sử dụng các thuật toán cơ bản như TF-IDF và BM25, để tính toán độ tương đồng giữa câu hỏi và các nội dung trong dataset. Sau đó, sắp xếp các nội dung theo độ tương đồng giảm dần và trả về kết quả.
 
 Để kết quả tốt hơn, tôi có sử dụng thêm một số kỹ thuật để chuẩn hóa nội dung như: loại bỏ các ký tự đặc biệt, dùng các công cụ của underthesea@underthesea để chỉnh dấu câu, phân tách từ...
 
@@ -18,10 +27,13 @@ Dựa vào dữ liệu đã thu thập được ở @datasetluat và @datasetqa.
         ```Python
 from underthesea import text_normalize,word_tokenize
 import re
-def format_text(text,word_segmentation=False):
-    text = re.sub(r'\W', ' ', text) 
+import string
+def format_text(text,word_segmentation=False,remove_punctuation=False):
     text = re.sub(r'\s+', ' ', text)
+    text = text.strip()
     text = text_normalize(text)
+    if remove_punctuation:
+        text = text.translate(str.maketrans('', '', string.punctuation))
     if word_segmentation:
         text = word_tokenize(text, format="text")
     return text
@@ -30,25 +42,32 @@ def format_text(text,word_segmentation=False):
     caption: [Hàm format_text dùng để chuẩn hóa nội dung]
 )
 
-@ketquatruyxuat1 là kết quả của cách tiếp cận đầu tiên, sử dụng 2 thuật toán cơ bản là TF-IDF và BM25. Với 2 dạng chuẩn hóa: sử dụng word segmentation và không sử dụng word segmentation.
+@ketquatruyxuat1 là kết quả của cách tiếp cận đầu tiên, sử dụng 2 thuật toán cơ bản là TF-IDF và BM25. Với 2 dạng chuẩn hóa: sử dụng word segmentation và không sử dụng word segmentation. Kết quả chưa được tốt, nhất là ở $k=5$ 
 
 #let ketqua = csv("../../data/retrieval_result.csv")
-#let col_kq = ketqua.first()
 
 #figure(table(
     columns: (auto  ,1fr,1fr,1fr,1fr),
-    ..col_kq.map((x) =>align(left,text(weight: "bold",x))),
-    ..ketqua.slice(1).flatten().map(e=>align(left,upper(e)))
-),caption: [Kết quả]) <ketquatruyxuat1>
+    [*Name*],[*$"Top"_5@"acc"$*],[*$"Top"_10@"acc"$*],[*$"Top"_20@"acc"$*],[*$"Top"_50@"acc"$*],
+    ..ketqua.flatten().map(e=>upper(e))
+),caption: [Kết quả cách tiếp cận thứ nhất]) <ketquatruyxuat1>
 
 
-*Hướng tiếp cận thứ 2*: Sử dụng Sentence Transformers. Cụ thể ở đây là model InstructorEmbedding@INSTRUCTOR được coi là state-of-the-art trong mảng này.
+*Hướng tiếp cận thứ 2:* Sử dụng Sentence Transformers. Cụ thể ở đây là model InstructorEmbedding@INSTRUCTOR được coi là state-of-the-art trong mảng này.
 
-Model này sẽ nhận đầu vào là một string và trả về một vector 768 chiều. Các câu hỏi có nội dung tương đồng sẽ có vector tương tự nhau. Do đó, ta có thể tính toán độ tương đồng giữa câu hỏi và các nội dung trong dataset bằng cách tính cosine similarity giữa vector của câu hỏi và vector của các nội dung trong dataset.
+Model này sẽ nhận đầu vào là một string và trả về một vector 768 chiều. Các câu hỏi có nội dung tương đồng sẽ có vector tương tự nhau. Do đó, ta có thể tính toán độ tương đồng giữa câu hỏi và các nội dung trong dataset bằng cách tính _cosine similarity_ giữa vector của câu hỏi và vector của các nội dung trong dataset.
+
+_Cosine similarity_ được tình dựa trên công thức sau:
+
+$ "similarity"(q,d_i)=(q*d_i)/(norm(q)norm(d_i)) $
+
+trong đó $q$ là vector của câu hỏi, $d_i$ là vector của nội dung thứ $i$ trong dataset.
 
 Tuy nhiên model này không được train trên tập dataset có nhiều tiếng Việt cho nên ta cần fine-tune lại model này trên tập dataset về luật để có kết quả tốt nhất.
 
-Theo tác giả của Instructor Embedding dữ liệu để fine-tune model có format là file JSON, gồm danh sách các ví dụ có dạng:
+
+
+Theo tác giả của Instructor Embedding dữ liệu để fine-tune model có format là file JSON, gồm danh sách các ví dụ có format như trong @format_json. Trong đó, `query` là câu hỏi, `pos` là nội dung có thể trả lời cho câu hỏi, `neg` là nội dung không thể trả lời cho câu hỏi, `task_name` là tên của dataset (có thể có nhiều dataset trong file JSON này).
 
 #figure(
     block(
@@ -75,13 +94,37 @@ Theo tác giả của Instructor Embedding dữ liệu để fine-tune model có
     ],
     caption: [Format của file JSON chứa dữ liệu fine-tune],
     kind: image
-)
+) <format_json>
 
-Trong đó, `query` là câu hỏi, `pos` là các nội dung có thể trả lời cho câu hỏi, `neg` là các nội dung không thể trả lời cho câu hỏi, `task_name` là tên của dataset (có thể có nhiều dataset trong file JSON này).
+
 
 Để tạo dataset cho việc fine-tune, chúng ta sẽ tận dụng dataset về hỏi đáp luật và *Hướng tiếp cận thứ 1* để tạo ra các ví dụ cho việc fine-tune. Cụ thể:
 
 - Với mỗi hỏi đáp trong dataset, `query` sẽ là câu hỏi, `pos` sẽ là nội dung của các chỉ mục đã được gán nhãn ở @datasetqa
 - Để tạo `neg`, ta sẽ sử dụng thuật toán đã nói ở *Hướng tiếp cận thứ 1* để tìm ra top k nội dung. Sau đó kiểm tra xem nội dung nào chưa nằm trong `pos`, thì nội dung đó sẽ là `neg`.
+
+Thông số khi finetune model:
+
+```yaml
+max_source_length=512
+num_train_epochs=10
+save_steps=500
+cl_temperature=0.01
+warmup_ratio=0.1
+learning_rate=2e-5
+per_device_train_batch_siz=16
+```
+
+Kết quả của các model được thể hiện ở @finetune_result. Model gốc của Instructor gồm có 3 model: `base`, `large`, `xl`. Vì giới hạn phần cứng nên tôi chỉ tiến hành finetune model nhỏ nhất là `base`. Tuy là model nhỏ nhưng kết quả sau khi finetune rất tốt.
+
+
+
+#let ketqua = csv("../../data/finetune_result.csv")
+
+#figure(table(
+    columns: (auto  ,1fr,1fr,1fr,1fr),
+    [*Name*],[*$"Top"_5@"acc"$*],[*$"Top"_10@"acc"$*],[*$"Top"_20@"acc"$*],[*$"Top"_50@"acc"$*],
+    ..ketqua.flatten().map(e=>upper(e))
+),caption: [Kết quả cách tiếp cận thứ hai]) <finetune_result>
 
 Sơ đồ:

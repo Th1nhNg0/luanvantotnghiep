@@ -3,8 +3,9 @@
 Phần cứng sử dụng:
 
 - CPU: Intel Core i5-12400F
-- GPU: Nvidia Geforce RTX 3060
+- GPU: RTX 3060, riêng fine-tuning sử dụng 4 GPU RTX 4090
 - RAM: 32GB DDR4
+
 
 Trong phạm vi của bài luận này, tôi chỉ sử dụng các văn bản liên quan tới lĩnh vực bảo hiểm xã hội và việc làm, bao gồm 761 điều luật để thử nghiệm và đánh giá:
 

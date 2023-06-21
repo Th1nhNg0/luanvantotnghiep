@@ -45,7 +45,7 @@ Generative Pre-trained Transformer (GPT), một loại mô hình học sâu có 
 
 == Embeddings
 
-Embedding là một kỹ thuật biểu diễn các nội dung số như hình, chữ, âm thanh thành một danh sách các con số (vector). Quá trình này giúp cho các machine learning model có thể "hiểu" được nội dung đó.
+Embedding là một kỹ thuật biểu diễn các nội dung số như hình, chữ, âm thanh thành một danh sách các con số (vector). Quá trình này giúp cho các mô hình machine learning có thể "hiểu" được nội dung đó.
 
 Embeddings thường được sử dụng trong các ứng dụng như:
 - Search (kết quả được sắp xếp theo mức độ liên quan đến một chuỗi truy vấn)
@@ -116,6 +116,7 @@ Khoảng cách giữa hai vector đo lường mức độ liên quan của chún
     ]
 )
 
+
 == Chroma
 
 Chroma là một cơ sở dữ liệu nhúng mã nguồn mở được thiết kế để lưu trữ các vector nhúng (embeddings) và cho phép tìm kiếm các vector gần nhất thay vì tìm kiếm theo chuỗi con như một cơ sở dữ liệu truyền thống. 
@@ -168,6 +169,35 @@ Bing AI không chỉ sinh văn bản dựa theo xác suất như ChatGPT của O
     ]
 )
 
+
+== Open-Domain Question Answering
+
+Open-domain Question Answering (ODQA) là một loại nhiệm vụ ngôn ngữ, yêu cầu mô hình tạo ra câu trả lời cho các câu hỏi bằng ngôn ngữ tự nhiên. Câu trả lời đúng là khách quan, vì vậy ta có thể dễ dàng đánh giá hiệu suất của mô hình.
+
+Ví dụ:
+
+```
+Question: What did Albert Einstein win the Nobel Prize for?
+Answer: The law of the photoelectric effect.
+```
+
+
+Phần "open-domain" đề cập đến việc thiếu bối cảnh liên quan đến bất kỳ câu hỏi thực tế nào được hỏi một cách tùy ý. Trong trường hợp trên, mô hình chỉ lấy câu hỏi làm đầu vào nhưng không cung cấp bất kỳ dẫn chứng nào về "What did Albert Einstein win the Nobel Prize for", trong đó thuật ngữ "The law of the photoelectric effect" có thể được đề cập. Trong trường hợp cả câu hỏi và bối cảnh được cung cấp, nhiệm vụ được gọi là *Reading comprehension (RC)*.
+
+Một mô hình ODQA có thể hoạt động với hoặc không có quyền truy cập vào nguồn tri thức bên ngoài (ví dụ: Wikipedia) và hai điều kiện này được gọi là open-book hoặc closed-book, trả lời câu hỏi mở hoặc đóng.
+
+Khi xét về các loại câu hỏi open-domain khác nhau, phân loại của Lewis, et al., 2020@lewis2020question được xem là khá phù hợp, phân loại theo thứ tự tăng dần độ khó:
+
+1. Một mô hình có thể trả lời đúng với câu trả lời cho một câu hỏi đã được thấy trong quá trình huấn luyện.
+2. Một mô hình có thể trả lời đúng với câu trả lời cho một câu hỏi mới ở thời gian kiểm tra và chọn một câu trả lời từ tập các câu trả lời mà nó đã thấy trong quá trình huấn luyện.
+3. Một mô hình có thể trả lời đúng với các câu hỏi mới có câu trả lời không có trong tập dữ liệu huấn luyện.
+
+#figure(
+    image("../images/QA-summary.png"),
+    caption: [Sơ lược về 3 mô hình ODQA]
+)
+
+Như đã đề cập từ trước, ChatGPT là Generator, Bing AI là retriever-Generator. 
 
 == Multimodal Model
 
