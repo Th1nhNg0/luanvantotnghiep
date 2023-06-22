@@ -18,6 +18,3 @@ Trong phạm vi của bài luận này, tôi chỉ sử dụng các văn bản l
 #include "./1_xay_dung_dataset_luat.typ"
 #include "./2_xay_dung_dataset_qa.typ"
 #include "./3_infomation_retrieval.typ"
-
-
-== Tra cứu văn bản luật bằng ChatGPT API
