@@ -1,6 +1,3 @@
-#set page(
-    numbering: none
-)
 #v(3cm)
 #align(center)[#text(weight: "bold",size:20pt,[Lời cảm ơn])]
 #v(1cm)
@@ -21,6 +18,6 @@ Cuối cùng, tôi xin cảm ơn gia đình, người thân, bạn bè đã luô
 #align(right)[
     _Tp.HCM, ngày 12 tháng 6 năm 2023_ \
     Tác giả #h(2cm)
-    #v(2cm)
+    #v(1cm)
     *Ngô Phú Thịnh* #h(1cm)
 ]

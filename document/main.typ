@@ -8,9 +8,7 @@
         lang:"vi",
         )
 #show raw:set text(font: "Courier New")
-#set heading(
-    numbering: "1.1.1.a.",
-)
+
 #set cite(
     style: "numerical",
 )
@@ -23,6 +21,11 @@
 #outline(indent: true)
 #pagebreak()
 #include "./content/3_loinoidau.typ"
+
+#set heading(
+    numbering: "1.1.1.a.",
+)
+
 #include "./content/4_kienthucchuanbi.typ"
 #include "./content/5_ungdung_thachthuc.typ"
 #include "./content/7_thunghiem/main.typ"
