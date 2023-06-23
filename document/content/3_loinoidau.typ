@@ -8,3 +8,12 @@ Gần đây nhất những tác vụ như text-to-image (sinh ảnh từ chữ) 
 
 Tuy những công cụ AI này rất hữu dụng, nhưng chúng chỉ có thể xử lí được các kiến thức chung, còn bị giới hạn nhiều ở kiến thức chuyên ngành. Đối với tiếng Việt, những công cụ này hoạt động không hoàn toàn hiệu quả.
 
+Khi nhắc đến "luật" hay "luật sư", nhiều người vẫn còn e dè, thờ ơ với nó. Họ nghĩ chỉ khi nào đụng đến những vấn đề tranh chấp, kiện tụng... thì mới cần quan tâm tới luật. Nhưng thực tế, luật là một ngành rất rộng, có ảnh hưởng đến mọi lĩnh vực của đời sống xã hội.
+
+Với mong muốn giúp mọi người hiểu rõ hơn về luật, cũng như giúp các luật sư, sinh viên luật có thêm một công cụ hỗ trợ trong công việc, đưa khái niệm "luật là cuộc sống" trở nên phổ biến. Tôi đã tiến hành nghiên cứu các ứng dụng của AI trong lĩnh vực này.
+
+Nội dung của luận văn ngoài phần mở đầu và kết luận được chia thành 3 phần:
+
+- Chương 1: Các kiến thức liên quan.
+- Chương 2: Các ứng dụng và thách thức của AI trong lĩnh vực luật.
+- Chương 3: Thử nghiệm tra cứu văn bản luật bằng AI.
