@@ -8,25 +8,7 @@
 
 Theo dữ liệu từ Thư viện pháp luật#footnote([thuvienphapluat.vn là trang chuyên cung cấp cơ sở dữ liệu, tra cứu và thảo luận pháp luật]), hiện nay Việt Nam có trên dưới 303936 văn bản vi phạm pháp luật. Bao gồm #tvpl_loaivanban.len() loại văn bản và #tvpl_linhvuc.len() lĩnh vực khác nhau:
 
-#figure(
-  grid(
-    columns: (1fr,1fr),
-    column-gutter: 10pt,
-    table(
-      columns: (1fr,1fr),
-      [*Loại văn bản*], [*Số lượng*],
-      ..tvpl_loaivanban.slice(0, calc.floor(tvpl_loaivanban.len()/2)).flatten()
-    ),
-    table(
-      columns: (1fr,1fr),
-      [*Loại văn bản*], [*Số lượng*],
-      ..tvpl_loaivanban.slice(calc.floor(tvpl_loaivanban.len()/2), tvpl_loaivanban.len()).flatten()
-    ),
-  ),
-  caption: [
-    Số lượng văn bản vi phạm pháp luật theo loại văn bản
-  ]
-)
+
 
 #figure(
   grid(
@@ -47,6 +29,26 @@ Theo dữ liệu từ Thư viện pháp luật#footnote([thuvienphapluat.vn là 
   ),
   caption: [
     Số lượng văn bản vi phạm pháp luật theo lĩnh vực
+  ]
+)
+
+#figure(
+  grid(
+    columns: (1fr,1fr),
+    column-gutter: 10pt,
+    table(
+      columns: (1fr,1fr),
+      [*Loại văn bản*], [*Số lượng*],
+      ..tvpl_loaivanban.slice(0, calc.floor(tvpl_loaivanban.len()/2)).flatten()
+    ),
+    table(
+      columns: (1fr,1fr),
+      [*Loại văn bản*], [*Số lượng*],
+      ..tvpl_loaivanban.slice(calc.floor(tvpl_loaivanban.len()/2), tvpl_loaivanban.len()).flatten()
+    ),
+  ),
+  caption: [
+    Số lượng văn bản vi phạm pháp luật theo loại văn bản
   ]
 )
 

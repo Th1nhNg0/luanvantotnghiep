@@ -13,7 +13,7 @@ Các văn bản quy phạm pháp luật tạo nên hệ thống pháp luật cá
 
 - Các văn bản quy phạm pháp luật có hiệu lực trong không gian (hiệu lực trong phạm vi khu vực lãnh thổ) và hiệu lực theo thời gian (bắt đầu có hiệu lực hay hết hiệu lực), hiệu lực theo nhóm người (có hiệu lực đối với nhóm người này và không có hiệu lực đối với nhóm người khác).
 
-Theo Hiến pháp năm 2013 @hien-phap-2013, Luật Ban hành văn bản quy phạm pháp luật năm 2015 @luat-bhvppl-2015 quy định hệ thống những văn bản quy phạm pháp luật gồm các văn bản có giá trị pháp lý như sau:
+Theo Hiến pháp năm 2013, Luật Ban hành văn bản quy phạm pháp luật năm 2015 quy định hệ thống những văn bản quy phạm pháp luật gồm các văn bản có giá trị pháp lý như sau:
 
 1. Hiến pháp.
 2. Bộ luật, luật, nghị quyết của Quốc hội.
@@ -199,7 +199,7 @@ Khi xét về các loại câu hỏi open-domain khác nhau, phân loại của 
 
 Như đã đề cập từ trước, ChatGPT là Generator, Bing AI là retriever-Generator. 
 
-== Multimodal Model
+== Multimodal model
 
 Multimodal Model là một hệ thống trí tuệ nhân tạo xử lý nhiều dạng dữ liệu cảm quan cùng lúc. Học trong Multimodal Model kết hợp các dữ liệu từ các cảm biến và nguồn khác vào một mô hình, tạo ra các dự đoán linh hoạt hơn.
 
@@ -211,7 +211,6 @@ Multimodal Model là đề tài nóng của trí tuệ nhân tạo. Ví dụ n�
     #set text(size:11pt)
     #figure(
         [
-        #align(left)[*GPT-4 visual input example, École Polytechnique Exam Question:*]
         #grid(
             columns: (60pt, 1fr),
             gutter: 10pt,
@@ -243,7 +242,7 @@ Multimodal Model là đề tài nóng của trí tuệ nhân tạo. Ví dụ n�
             ]),
         ],
         caption: [
-            Ví dụ về Multimodal Model, người dùng yêu cầu GPT­4 trả lời câu hỏi về vấn đề vật lý được viết bằng tiếng Pháp
+            Ví dụ về Multimodal Model, người dùng yêu cầu GPT­4 trả lời câu hỏi về bài tập vật lý được viết bằng tiếng Pháp, bài tập là một hình ảnh.
         ]
     )
 ]
