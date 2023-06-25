@@ -97,7 +97,7 @@ Do vậy, để dùng được các công cụ này, các doanh nghiệp phải 
 
 *Chi phí cao:*
 
-Chi phí để huấn luyện một mô hình ngôn ngữ lớn được The Next Platform@morgan_2022_counting thống kê tại @chiphitrain. Mô hình càng lớn thì chi phí và thời gian càng cao. 
+Chi phí để huấn luyện một mô hình ngôn ngữ lớn được The Next Platform@morgan_2022_counting thống kê tại @chiphitrain. Mô hình càng lớn thì chi phí và thời gian huấn luyện càng cao. 
 
 #let train_price = csv("../data/train_price.csv")
 #figure(
@@ -128,9 +128,9 @@ Chi phí để sử dụng các model LLM do bên thứ 3 cung cấp được t�
     ]
 )
 
-Ta có thể sử dụng các model LLM open source có độ hiệu quả tương tự như Bloom, GPT-J... Nhưng để chạy được những model này thì cần một lượng lớn phần cứng. Điển hình như Bloom@workshop2023bloom, để chạy model Bloom 176B (176 billion parameters) cần đến 8 card đồ họa A100 80GB. Với chi phí khoản 15000 USD cho một card, tổng chi phí để chạy model này lên tới 120,000 USD chưa tính đến tiền điện và chi phí bảo trì.
+Ta có thể sử dụng các model LLM open source có độ hiệu quả tương tự như Bloom, GPT-J... Nhưng để chạy được những model này thì cần một lượng lớn phần cứng. Điển hình như Bloom@workshop2023bloom, để chạy model Bloom 176B (176 billion parameters) cần đến 8 card đồ họa A100 80GB. Với chi phí khoản 15000 USD cho một card, tổng chi phí để chạy model này lên tới 120,000 USD chưa tính đến chi phí bảo trì.
 
-Tuy nhiên các nhà nghiên cứu đã sáng tạo ra nhiều phương pháp để khắc phục các nhược điểm này. Điểm như hình LoRa@hu2022lora dùng để fine-tune các model lớn, giúp model học thêm các kiến thức mới mà không tốn quá nhiều tài nguyên. Hay GPTQ@frantar-gptq viết tắt của Generative Pre-Training Quantized, một phương pháp "nén" mô hình để có thể chạy trên các thiết bị yếu hơn, không cần GPU. Đây cũng là một trong các mục tiêu mà các nhà nghiên cứu đang hướng đến: "chạy mô hình ngôn ngữ lớn trên mọi thiết bị" như điện thoại, laptop, các thiết bị điện tử trong công nghiệp...
+Các nhà nghiên cứu đã sáng tạo ra nhiều phương pháp để khắc phục các nhược điểm này. Điển như hình LoRa@hu2022lora dùng để fine-tune các model lớn, giúp model học thêm các kiến thức mới mà không tốn quá nhiều tài nguyên. Hay GPTQ@frantar-gptq viết tắt của Generative Pre-Training Quantized, một phương pháp "nén" mô hình để có thể chạy trên các thiết bị yếu hơn, không cần GPU. Đây cũng là một trong các mục tiêu mà các nhà nghiên cứu đang hướng đến: "chạy mô hình ngôn ngữ lớn trên mọi thiết bị" như điện thoại, laptop, các thiết bị điện tử trong công nghiệp...
 
 *Đạo đức và pháp lý:*
 
