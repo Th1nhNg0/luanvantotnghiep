@@ -12,7 +12,7 @@ from langchain.llms import Baseten, CTransformers, OpenAI
 from langchain.prompts import PromptTemplate
 from langchain.vectorstores import Chroma
 from langchain.llms import CTransformers
-
+from langchain.llms import LlamaCpp
 logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))
 
@@ -21,6 +21,16 @@ embeddings = HuggingFaceInstructEmbeddings(
     query_instruction='Represent the legal question for retrieving evidence documents:',
     model_name='C:/Users/ngoph/Desktop/luanvan/model'
 )
+
+
+# llm = OpenAI(
+#     openai_api_key='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'
+# )
+llm = LlamaCpp(
+    model_path="d:/Code/oobabooga_windows/text-generation-webui/models/vilm_vietcuna-3b-ggml-fp16-q4_0/ggml-model-vietcuna-3b-f16-q4_0.bin",
+    verbose=True
+)
+print(llm("Xin chào"))
 
 
 chroma = Chroma(
@@ -32,12 +42,6 @@ chroma = Chroma(
                              ),
     embedding_function=embeddings
 )
-
-# llm = OpenAI(
-#     openai_api_key='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'
-# )
-llm = CTransformers(model="marella/gpt-2-ggml")
-print(llm("Xin chào"))
 chain = load_qa_chain(llm=llm, chain_type="refine", verbose=True)
 
 
