@@ -2,7 +2,6 @@
 
 == Sử dụng LLM để tra cứu và soạn thảo
 
-=== Sử dụng cơ bản
 
 Sự ra đời của ChatGPT đã thay đổi cách chúng ta tìm kiếm nội dung trên internet. Thay vì phải nhập từ khóa, chúng ta có thể đặt câu hỏi và nhận được câu trả lời ngay lập tức. Và ChatGPT còn có thể hiểu được cuộc hội thoại đang diễn ra và đưa ra những câu trả lời phù hợp. Điều này giúp chúng ta tiết kiệm thời gian và tăng cường hiệu quả tìm kiếm.
 
@@ -43,50 +42,6 @@ Dựa vào nội dung bên trên, bạn hãy trả lời câu hỏi sau: {câu h
 
 Cách làm này đã tạo ra một định nghĩa, ngành nghề hoàn toàn mới: *prompt engineering*, là quá trình tìm kiếm, lựa chọn và sắp xếp các từ, cụm từ hoặc câu văn để hướng dẫn mô hình ngôn ngữ tạo ra các nội dung hữu ích và phù hợp với mục đích và yêu cầu của người dùng.
 
-Theo Langchain@Chase_LangChain_2022, có bốn phương pháp thường gặp để cung cấp thêm kiến thức cho mô hình ngôn ngữ:
-
-*1. Stuff documents:* là phương pháp đơn giản nhất. Phương pháp này nhận một danh sách các tài liệu liên quan tới câu hỏi, rồi đưa chúng vào mô hình để tạo ra câu trả lời như @sschat. Phương pháp này phù hợp khi độ dài của các tài liệu là nhỏ và chỉ một lượng ít tài liệu được truyền vào mô hình.
-
-#figure(
-    image("../images/c1.jpg"),
-    caption: [
-        Phương pháp "stuff documents"
-    ]
-)
-
-*2. Refine documents:* tạo ra câu trả lời bằng cách duyệt qua từng tài liệu liên quan và cập nhật lại câu trả lời dựa trên nội dung của tài liệu. Phương pháp này phù hợp khi độ dài của các tài liệu là lớn và tác vụ cần phân tích nhiều tại liệu mới đưa ra được câu trả lời. Điểm yếu của phương pháp này là phải gọi mô hình nhiều lần, dẫn đến tốc độ chậm.
-
-#figure(
-    image("../images/c2.jpg"),
-    caption: [
-        Phương pháp "refine documents"
-    ]
-)
-
-
-
-*3. Map reduce:* đầu tiên áp dụng mô hình ngôn ngữ cho từng tài liệu riêng biệt (Map step), xem output như một tài liệu mới. Sau đó đưa tất cả các tài liệu mới này vào mô hình ngôn ngữ khác để tạo ra một output duy nhất (Reduce step). 
-
-#figure(
-    image("../images/c3.jpg"),
-    caption: [
-        Phương pháp "map reduce"
-    ]
-)
-
-*4. Map re-rank:* tương tự bước Map của phương pháp *Map reduce* tuy nhiên, output của phương pháp này có thêm 1 field là score, dùng để đánh giá độ tự tin của câu trả lời.
-
-#figure(
-    image("../images/c4.jpg"),
-    caption: [
-        Phương pháp "map re-rank"
-    ]
-)
-
-Nhờ có các công cụ này mà người dùng có thể tìm kiếm thông tin một cách nhanh chóng, chuẩn xác. Đối với các câu hỏi cần tính chuyên môn cao như chuyên ngành luật, ta có thể hiểu ngay vấn đề cần tìm hiểu bằng cách hỏi chatbot, không hiểu chỗ nào thì hỏi ngay chỗ đó.
-
-=== Sử dụng nâng cao
-
 Phiên bản GPT 4 được ra mắt vào ngày 9 tháng 3 năm 2023, mang lại vô số tính năng cải tiến. Trong đó, tính năng đặc biệt nhất là người dùng có thể thêm hình ảnh vào câu hỏi. Từ đó ta có thể upload tài liệu của mình và hỏi chatbot những nội dung xoay quanh đó. Như hợp đồng, báo cáo tài chính, bản thỏa thuận...
 
 #figure(
@@ -109,6 +64,37 @@ Với sức mạnh của GPT4, ta có thể thấy rõ ràng rằng, trong tươ
 
 == Robot luật sư
 
+DoNotPay@donotpay là một công ty khởi nghiệp công nghệ đứng sau ứng dụng được gọi là "robot luật sư đầu tiên trên thế giới", sử dụng trí tuệ nhân tạo để bảo vệ quyền lợi của người tiêu dùng. Trí tuệ nhân tạo này sẽ hướng dẫn các bị cáo cách trả lời trước tòa án bằng cách sử dụng một tai nghe có khả năng kết nối Bluetooth, theo bài báo của Matthew Sparkes trên tạp chí New Scientist@matthewsparkes_2023_ai.
 
+Joshua Browder, người sáng lập DoNotPay, trong bài phỏng vấn với David Lumb của CNET@lumb_2023_ai, cho biết các dịch vụ và phí pháp lý có thể đắt đỏ, ngăn cản một số người thuê luật sư truyền thống để đấu tranh cho họ tại tòa án. "Hầu hết mọi người không đủ khả năng đại diện pháp lý". Luật sư AI "sẽ là một bằng chứng về khái niệm cho các tòa án cho phép sử dụng công nghệ trong phòng xử án".
+
+Robot luật sư của DoNotPay sẽ được cung cấp âm thanh của các quá trình tố tụng tại tòa án khi chúng diễn ra, sau đó nó sẽ phản hồi bằng các lập luận pháp lý. Các bị cáo đã đồng ý lặp lại với thẩm phán chính xác những gì chatbot nói.
+
+Robot luật sư sẽ sử dụng GPT-J@gpt-j, một mô hình ngôn ngữ mã nguồn mở được phát hành bởi EleutherAI#footnote([EleutherAI là một phòng thí nghiệm nghiên cứu AI phi lợi nhuận tập trung vào khả năng diễn giải và căn chỉnh của các mô hình lớn.]). DoNotPay đã huấn luyện chatbot để tranh luận bằng cách sử dụng các sự kiện thay vì bịa ra mọi thứ để thắng kiện. Họ cũng lập trình nó để đôi khi giữ im lặng, vì không phải mọi thứ trước tòa đều cần có phản hồi.
+
+Vụ án đầu tiên liên quan đến luật sư robot được ấn định vào ngày 22 tháng 2, Browder tiết lộ trên Twitter vào ngày 21 tháng 1. Vụ án này liên quan đến một cáo buộc vi phạm tốc độ khi tham gia giao thông.
+
+#figure(
+    image("../images/tweet.png",width:65%),
+    caption: [
+        Công bố vụ án đầu tiên của robot luật sư trên Twitter
+    ]
+)
+
+
+Tuy còn nhiều tranh cãi xoay quanh vấn đề này, nhưng có thể nói rằng đây là một bước tiến quan trọng trong việc ứng dụng trí tuệ nhân tạo vào lĩnh vực pháp lý. Với tốc độ phát triển của ngành AI hiện nay, khả năng robot luật sư trở thành một thứ gì đó "bình dân" không còn là điều quá xa vời. 
 
 == Thách thức
+
+Tuy các ứng dụng của AI mang lại nhiều lợi ích, nhưng cũng có những thách thức cần được giải quyết. Một số vấn đề mà cộng đồng AI trên thế giới đang phải đối mặt đó là:
+
+*Bảo mật thông tin:*
+
+Hiện nay các model LLM có độ chính xác cao nhất đều là do bên thứ 3 cung cấp, vd: OpenAI, Cohere, Stability AI... Do đó, những doanh nghiệp có dữ liệu nhạy cảm rất khó để sử dụng các công cụ này. Theo tạp chí Fortune@mcglauflin_2023_apple, một số công ty như Apple, Samsung... đã cấm nhân viên của mình sử dụng ChatGPT vì lo ngại các thông tin nhạy cảm có thể bị rò rỉ.
+
+Do vậy, để dùng được các công cụ này, các doanh nghiệp phải tự chủ được các công nghệ AI. Mà để tự chủ được các công nghệ này thì cần một chi phí cực kì cao. Theo Business Insider, một ngày OpenAI có thể phải trả tới 700,000 USD để duy trì hệ thống của mình.@mok_2023_chatgpt
+
+
+*Chi phí cao:*
+
+Hiện nay để
