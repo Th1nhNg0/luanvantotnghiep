@@ -10,6 +10,27 @@ Theo dữ liệu từ Thư viện pháp luật#footnote([thuvienphapluat.vn là 
 
 
 
+
+#figure(
+  grid(
+    columns: (1fr,1fr),
+    column-gutter: 10pt,
+    table(
+      columns: (1fr,1fr),
+      [*Loại văn bản*], [*Số lượng*],
+      ..tvpl_loaivanban.slice(0, calc.floor(tvpl_loaivanban.len()/2)).flatten()
+    ),
+    table(
+      columns: (1fr,1fr),
+      [*Loại văn bản*], [*Số lượng*],
+      ..tvpl_loaivanban.slice(calc.floor(tvpl_loaivanban.len()/2), tvpl_loaivanban.len()).flatten()
+    ),
+  ),
+  caption: [
+    Số lượng văn bản vi phạm pháp luật theo loại văn bản
+  ]
+)
+
 #figure(
   grid(
     columns: (1fr,1fr),
@@ -32,25 +53,6 @@ Theo dữ liệu từ Thư viện pháp luật#footnote([thuvienphapluat.vn là 
   ]
 )
 
-#figure(
-  grid(
-    columns: (1fr,1fr),
-    column-gutter: 10pt,
-    table(
-      columns: (1fr,1fr),
-      [*Loại văn bản*], [*Số lượng*],
-      ..tvpl_loaivanban.slice(0, calc.floor(tvpl_loaivanban.len()/2)).flatten()
-    ),
-    table(
-      columns: (1fr,1fr),
-      [*Loại văn bản*], [*Số lượng*],
-      ..tvpl_loaivanban.slice(calc.floor(tvpl_loaivanban.len()/2), tvpl_loaivanban.len()).flatten()
-    ),
-  ),
-  caption: [
-    Số lượng văn bản vi phạm pháp luật theo loại văn bản
-  ]
-)
 
 Các thuộc tính của một văn bản quy phạm pháp luật gồm: tên văn bản, số hiệu văn bản, loại văn bản, nơi ban hành, người ký, ngày ban hành, ngày hiệu lực, ngày công báo, số công báo.
 

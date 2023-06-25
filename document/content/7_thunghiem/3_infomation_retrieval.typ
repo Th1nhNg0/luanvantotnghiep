@@ -69,6 +69,27 @@ Tuy nhiên model này không được train trên tập dataset có nhiều ti�
 
 Theo tác giả của Instructor Embedding dữ liệu để fine-tune model có format là file JSON, gồm danh sách các ví dụ có format như trong @format_json. Trong đó, `query` là câu hỏi, `pos` là nội dung có thể trả lời cho câu hỏi, `neg` là nội dung không thể trả lời cho câu hỏi, `task_name` là tên của dataset (có thể có nhiều dataset trong file JSON này).
 
+
+
+
+
+Để tạo dataset cho việc fine-tune, chúng ta sẽ tận dụng dataset về hỏi đáp luật và *Hướng tiếp cận thứ 1* để tạo ra các ví dụ cho việc fine-tune. Cụ thể:
+
+- Với mỗi hỏi đáp trong dataset, `query` sẽ là câu hỏi, `pos` sẽ là nội dung của các chỉ mục đã được gán nhãn ở @datasetqa
+- Để tạo `neg`, ta sẽ sử dụng thuật toán đã nói ở *Hướng tiếp cận thứ 1* để tìm ra top k nội dung. Sau đó kiểm tra xem nội dung nào chưa nằm trong `pos`, thì nội dung đó sẽ là `neg`.
+
+Thông số khi finetune model:
+
+```yaml
+max_source_length=512
+num_train_epochs=10
+save_steps=500
+cl_temperature=0.01
+warmup_ratio=0.1
+learning_rate=2e-5
+per_device_train_batch_siz=16
+```
+
 #figure(
     block(
         stroke: 1pt,
@@ -96,25 +117,6 @@ Theo tác giả của Instructor Embedding dữ liệu để fine-tune model có
     kind: image
 ) <format_json>
 
-
-
-Để tạo dataset cho việc fine-tune, chúng ta sẽ tận dụng dataset về hỏi đáp luật và *Hướng tiếp cận thứ 1* để tạo ra các ví dụ cho việc fine-tune. Cụ thể:
-
-- Với mỗi hỏi đáp trong dataset, `query` sẽ là câu hỏi, `pos` sẽ là nội dung của các chỉ mục đã được gán nhãn ở @datasetqa
-- Để tạo `neg`, ta sẽ sử dụng thuật toán đã nói ở *Hướng tiếp cận thứ 1* để tìm ra top k nội dung. Sau đó kiểm tra xem nội dung nào chưa nằm trong `pos`, thì nội dung đó sẽ là `neg`.
-
-Thông số khi finetune model:
-
-```yaml
-max_source_length=512
-num_train_epochs=10
-save_steps=500
-cl_temperature=0.01
-warmup_ratio=0.1
-learning_rate=2e-5
-per_device_train_batch_siz=16
-```
-
 Kết quả của các model được thể hiện ở @finetune_result. Model gốc của Instructor gồm có 3 model: `base`, `large`, `xl`. Vì giới hạn phần cứng nên tôi chỉ tiến hành finetune model nhỏ nhất là `base`. Tuy là model nhỏ nhưng kết quả sau khi finetune rất tốt.
 
 
@@ -126,5 +128,3 @@ Kết quả của các model được thể hiện ở @finetune_result. Model g
     [*Name*],[*$"Top"_5@"acc"$*],[*$"Top"_10@"acc"$*],[*$"Top"_20@"acc"$*],[*$"Top"_50@"acc"$*],
     ..ketqua.flatten().map(e=>upper(e))
 ),caption: [Kết quả cách tiếp cận thứ hai]) <finetune_result>
-
-Sơ đồ:

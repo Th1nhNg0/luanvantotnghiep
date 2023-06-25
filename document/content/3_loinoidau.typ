@@ -15,7 +15,7 @@ Với mong muốn giúp mọi người hiểu rõ hơn về luật, cũng như g
 Nội dung của luận văn ngoài phần mở đầu và kết luận được chia thành 3 phần:
 
 - Chương 1: Các kiến thức liên quan.
-- Chương 2: Các ứng dụng và thách thức của AI trong lĩnh vực luật.
-- Chương 3: Thử nghiệm tra cứu văn bản luật bằng AI.
+- Chương 2: Các ứng dụng và thách thức.
+- Chương 3: Thử nghiệm tra cứu văn bản luật.
 
 #pagebreak()

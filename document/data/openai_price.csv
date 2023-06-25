@@ -1,0 +1,8 @@
+GPT-4,8K context,$0.03 / 1K token,$0.06 / 1K token
+GPT-4,32K context,$0.06 / 1K token,$0.12 / 1K token
+Chat,4K context,$0.0015 / 1K token,$0.002 / 1K token
+Chat,16K context,$0.003 / 1K token,$0.004 / 1K token
+InstructGPT,Ada,$0.0004 / 1K token,$0.0004 / 1K token
+InstructGPT,Babbage,$0.0005 / 1K token,$0.0005 / 1K token
+InstructGPT,Curie,$0.0020 / 1K token,$0.0020 / 1K token
+InstructGPT,Davinci,$0.0200 / 1K token,$0.0200 / 1K token
