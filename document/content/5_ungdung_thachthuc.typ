@@ -42,12 +42,12 @@ Dựa vào nội dung bên trên, bạn hãy trả lời câu hỏi sau: {câu h
 
 Cách làm này đã tạo ra một định nghĩa, ngành nghề hoàn toàn mới: *prompt engineering*, là quá trình tìm kiếm, lựa chọn và sắp xếp các từ, cụm từ hoặc câu văn để hướng dẫn mô hình ngôn ngữ tạo ra các nội dung hữu ích và phù hợp với mục đích và yêu cầu của người dùng.
 
-Phiên bản GPT 4 được ra mắt vào ngày 9 tháng 3 năm 2023, mang lại vô số tính năng cải tiến. Trong đó, tính năng đặc biệt nhất là người dùng có thể thêm hình ảnh vào câu hỏi. Từ đó ta có thể upload tài liệu của mình và hỏi chatbot những nội dung xoay quanh đó. Như hợp đồng, báo cáo tài chính, bản thỏa thuận...
+Phiên bản GPT-4 được ra mắt vào ngày 9 tháng 3 năm 2023, mang lại vô số tính năng cải tiến. Trong đó, tính năng đặc biệt nhất là người dùng có thể thêm hình ảnh vào câu hỏi. Từ đó ta có thể upload tài liệu của mình và hỏi chatbot những nội dung xoay quanh đó. Như hợp đồng, báo cáo tài chính, bản thỏa thuận...
 
 #figure(
     image("../images/gpt4sum.png"),
     caption: [
-        GPT 4 tóm tắt nội dung của một bài báo khoa học
+        GPT-4 tóm tắt nội dung của một bài báo khoa học
     ]
 )
 
@@ -60,7 +60,7 @@ Các nhà nghiên cứu tại MIT đã có một thử nghiệm nhỏ trên lĩn
     ]
 )
 
-Với sức mạnh của GPT4, ta có thể thấy rõ ràng rằng, trong tương lai, các công việc liên quan đến tìm kiếm thông tin, tìm hiểu vấn đề, đọc hiểu văn bản, sẽ được thay thế bởi các chatbot thông minh. Điều này sẽ giúp con người tiết kiệm được rất nhiều thời gian và chi phí, đồng thời tăng cường hiệu quả công việc.
+Với sức mạnh của GPT-4, ta có thể thấy rõ ràng rằng, trong tương lai, các công việc liên quan đến tìm kiếm thông tin, tìm hiểu vấn đề, đọc hiểu văn bản, sẽ được thay thế bởi các chatbot thông minh. Điều này sẽ giúp con người tiết kiệm được rất nhiều thời gian và chi phí, đồng thời tăng cường hiệu quả công việc.
 
 == Robot luật sư
 
