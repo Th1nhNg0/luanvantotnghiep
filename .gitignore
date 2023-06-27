@@ -4,7 +4,7 @@ typst.exe
 code/documents
 code/urls.txt
 code/items.jsonl.gz 
-
+vscode/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
