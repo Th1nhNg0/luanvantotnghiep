@@ -69,14 +69,12 @@ Tuy nhiên model này không được train trên tập dataset có nhiều ti�
 
 Theo tác giả của Instructor Embedding dữ liệu để fine-tune model có format là file JSON, gồm danh sách các ví dụ có format như trong @format_json. Trong đó, `query` là câu hỏi, `pos` là nội dung có thể trả lời cho câu hỏi, `neg` là nội dung không thể trả lời cho câu hỏi, `task_name` là tên của dataset (có thể có nhiều dataset trong file JSON này).
 
-
-
-
-
 Để tạo dataset cho việc fine-tune, chúng ta sẽ tận dụng dataset về hỏi đáp luật và *Hướng tiếp cận thứ 1* để tạo ra các ví dụ cho việc fine-tune. Cụ thể:
 
 - Với mỗi hỏi đáp trong dataset, `query` sẽ là câu hỏi, `pos` sẽ là nội dung của các chỉ mục đã được gán nhãn ở @datasetqa
 - Để tạo `neg`, ta sẽ sử dụng thuật toán đã nói ở *Hướng tiếp cận thứ 1* để tìm ra top k nội dung. Sau đó kiểm tra xem nội dung nào chưa nằm trong `pos`, thì nội dung đó sẽ là `neg`.
+
+Quá trình trên sẽ là *stage 1* của quá trình fine-tune. Sau khi fine-tune xong, ta sẽ tiến hành *stage 2*, tạo dataset tương tự ở stage 1 nhưng thay vì sử dụng các thuật toán cơ bản, ta sẽ sử dụng model đã được fine-tune để tạo `neg`. Xem thêm tại @sodo.
 
 Thông số khi finetune model:
 
@@ -128,3 +126,9 @@ Kết quả của các model được thể hiện ở @finetune_result. Model g
     [*Name*],[*$"Top"_5@"acc"$*],[*$"Top"_10@"acc"$*],[*$"Top"_20@"acc"$*],[*$"Top"_50@"acc"$*],
     ..ketqua.flatten().map(e=>upper(e))
 ),caption: [Kết quả cách tiếp cận thứ hai]) <finetune_result>
+
+
+#figure(
+    image("../../images/diagram.svg"),
+    caption: [Sơ đồ tổng quan về phương pháp tiếp cận thứ hai],
+) <sodo>
