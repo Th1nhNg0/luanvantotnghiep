@@ -76,17 +76,6 @@ Theo tác giả của Instructor Embedding dữ liệu để fine-tune model có
 
 Quá trình trên sẽ là *stage 1* của quá trình fine-tune. Sau khi fine-tune xong, ta sẽ tiến hành *stage 2*, tạo dataset tương tự ở stage 1 nhưng thay vì sử dụng các thuật toán cơ bản, ta sẽ sử dụng model đã được fine-tune để tạo `neg`. Xem thêm tại @sodo.
 
-Thông số khi finetune model:
-
-```yaml
-max_source_length=512
-num_train_epochs=10
-save_steps=500
-cl_temperature=0.01
-warmup_ratio=0.1
-learning_rate=2e-5
-per_device_train_batch_siz=16
-```
 
 #figure(
     block(

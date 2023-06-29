@@ -1,4 +1,5 @@
 instructor-base,0.0119,0.0221,0.0416,0.0944
 instructor-large,0.0138,0.0247,0.0421,0.1023
 instructor-xl,0.0188,0.0312,0.0537,0.1427
-instructor-base ft,0.4832,0.5741,0.6621,0.7765
+instructor-base FTS1,0.4832,0.5741,0.6621,0.7765
+instructor-base FTS2,0.6431,0.7432,0.8123,0.8912
