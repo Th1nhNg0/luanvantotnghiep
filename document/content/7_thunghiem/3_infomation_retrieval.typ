@@ -1,3 +1,4 @@
+#pagebreak()
 == Truy xuất thông tin
 
 Dựa vào dữ liệu đã thu thập được ở @datasetluat và @datasetqa. Ta thiết lập một bài toán:

@@ -31,11 +31,11 @@
 
 #set page(
     paper:"a4",
-    margin: 2.5cm,
+    margin: (bottom: 1.75cm, top: 2.25cm),
     numbering: "1",
 )
 #set text(size:13pt,
-        font: "Times New Roman",
+        font: "TeX Gyre Pagella",
         lang:"vi",
         )
 #show raw:set text(font: "Courier New")
