@@ -31,33 +31,41 @@
 
 #set page(
     paper:"a4",
-    margin: (bottom: 1.75cm, top: 2.25cm),
-    numbering: "1",
+    margin: (y:2cm,inside:3cm,outside:2cm),
 )
+
 #set text(size:13pt,
         font: "TeX Gyre Pagella",
         lang:"vi",
-        )
+)
 #show raw:set text(font: "Courier New")
+#show table: set par(justify: false)
+#show table: set text(size:12pt,spacing:90%)
 
 #set cite(
     style: "numerical",
 )
 #set par(
-    justify: true
+    justify: true,
 )
 
 #include "./content/1_cover.typ"
 #include "./content/2_loicamon.typ"
+#set page(
+    header: getHeader(),
+    numbering: "1",
+)
+
+#pagebreak()
 #outline(indent: true)
 #pagebreak()
+
+
 #include "./content/3_loinoidau.typ"
 #set heading(
     numbering: "1.1.1.a.",
 )
-#set page(
-    header: getHeader()
-)
+
 #include "./content/4_kienthucchuanbi.typ"
 #include "./content/5_ungdung_thachthuc.typ"
 #include "./content/7_thunghiem/main.typ"

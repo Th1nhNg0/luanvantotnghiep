@@ -9,8 +9,6 @@
 Theo dữ liệu từ Thư viện pháp luật#footnote([thuvienphapluat.vn là trang chuyên cung cấp cơ sở dữ liệu, tra cứu và thảo luận pháp luật]), hiện nay Việt Nam có trên dưới 303936 văn bản vi phạm pháp luật. Bao gồm #tvpl_loaivanban.len() loại văn bản và #tvpl_linhvuc.len() lĩnh vực khác nhau:
 
 
-
-
 #figure(
   grid(
     columns: (1fr,1fr),
@@ -30,7 +28,8 @@ Theo dữ liệu từ Thư viện pháp luật#footnote([thuvienphapluat.vn là 
     Số lượng văn bản vi phạm pháp luật theo loại văn bản
   ]
 )
-
+#[
+#set par(justify: false)
 #figure(
   grid(
     columns: (1fr,1fr),
@@ -52,7 +51,7 @@ Theo dữ liệu từ Thư viện pháp luật#footnote([thuvienphapluat.vn là 
     Số lượng văn bản vi phạm pháp luật theo lĩnh vực
   ]
 )
-
+]
 
 Các thuộc tính của một văn bản quy phạm pháp luật gồm: tên văn bản, số hiệu văn bản, loại văn bản, nơi ban hành, người ký, ngày ban hành, ngày hiệu lực, ngày công báo, số công báo.
 

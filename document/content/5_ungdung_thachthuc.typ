@@ -1,3 +1,4 @@
+#pagebreak()
 = Cơ hội và thách thức <phan2>
 
 == Sử dụng LLM để tra cứu và soạn thảo
