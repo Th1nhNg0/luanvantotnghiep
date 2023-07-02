@@ -87,7 +87,7 @@ Khi đó những từ có giá trị TF-IDF cao là những từ xuất hiện n
 
 == BM25
 
-Phương pháp có tên BM25 (BM – best match), thường gọi "Okapi BM25", vì lần đầu tiên công thức được sử dụng trong hệ thống tìm kiếm Okapi, được sáng lập tại trường đại học London những năm 1980 và 1990.
+Phương pháp có tên BM25 (BM – best match), thường gọi "Okapi BM25", vì lần đầu tiên công thức được sử dụng trong hệ thống tìm kiếm Okapi, được sáng lập tại trường đại học London những năm 1980 và 1990@bm25okapi.
 
 Công thức tính điểm của BM25 được định nghĩa như sau:
 

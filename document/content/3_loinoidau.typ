@@ -8,7 +8,7 @@ Gần đây nhất những tác vụ như text-to-image (sinh ảnh từ chữ) 
 
 Tuy những công cụ AI này rất hữu dụng, nhưng chúng chỉ có thể xử lí được các kiến thức chung, còn bị giới hạn nhiều ở kiến thức chuyên ngành. Đối với tiếng Việt, những công cụ này hoạt động không hoàn toàn hiệu quả.
 
-Hầu hết mọi người đều cho rằng pháp luật quá khô khan, cứng nhắc và cao siêu. Họ sợ hãi phải dính dáng đến bất cứ vấn đề gì liên quan đến pháp luật. Cứ nhắc đến pháp luật là người ta nghĩ ngay đến những điều kinh khủng như thủ tục rắc rối, bị gây khó dễ, bất công, bồi thường, ngồi tù... Nỗi sợ này có nguồn gốc từ lâu đời, từ khi pháp luật còn là công cụ để giới cầm quyền đàn áp, bóc lột nô lệ và những người dân yếu đuối@tusu.
+Hầu hết mọi người đều cho rằng pháp luật quá khô khan, cứng nhắc và cao siêu. Họ sợ hãi phải dính dáng đến bất cứ vấn đề gì liên quan đến pháp luật. Cứ nhắc đến pháp luật là người ta nghĩ ngay đến những điều kinh khủng như thủ tục rắc rối, bị gây khó dễ, bất công, bồi thường, ngồi tù... Nỗi sợ này có nguồn gốc từ lâu đời, từ khi pháp luật còn là công cụ để giới cầm quyền đàn áp, bóc lột nô lệ và những người dân yếu đuối@tusu[p.~74].
 
 Nhưng thực tế, luật là một ngành rất rộng, có ảnh hưởng đến mọi lĩnh vực của đời sống xã hội. Pháp luật chính là cuộc sống. Luật như một công cụ để bảo vệ lợi ích của công dân. Đó là những hoạt động rất đỗi bình thường mà chúng ta vẫn làm hằng ngày. Chỉ cần chúng ta chịu tìm hiểu, mọi vấn đề đều trở nên vô cùng đơn giản.
 
