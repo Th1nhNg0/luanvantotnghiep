@@ -51,15 +51,15 @@
 
 #include "./content/1_cover.typ"
 #include "./content/2_loicamon.typ"
+
+#counter(page).update(1)
 #set page(
     header: getHeader(),
     numbering: "1",
 )
-
 #pagebreak()
 #outline(indent: true)
 #pagebreak()
-
 
 #include "./content/3_loinoidau.typ"
 #set heading(
