@@ -77,4 +77,6 @@
     target: figure
 )
 #pagebreak()
+
+#set text(size:12.5pt)
 #bibliography("ref.bib",style:"ieee")
