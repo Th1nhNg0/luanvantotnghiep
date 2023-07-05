@@ -21,7 +21,6 @@
 Tp. Hồ Chí Minh - 2023
 ]
 #pagebreak()
-#pagebreak()
 
 #block(
   inset: 30pt,
