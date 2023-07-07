@@ -25,7 +25,7 @@
 
 #set document(
     author: "Ngô Phú Thịnh",
-    title: "Deep Learning in the Legal System of Vietnam: Opportunities and Challenges"
+    title: "Deep learning in legal system: Opportunities and Challenges"
 )
 
 

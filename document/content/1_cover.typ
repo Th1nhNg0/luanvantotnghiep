@@ -1,4 +1,4 @@
-#let title = "Deep Learning in the Legal System of Vietnam: Opportunities and Challenges"
+#let title = "Deep learning in legal system: Opportunities and Challenges"
 #let author = "Ngô Phú Thịnh"
 
 #set page(margin: 1.5cm,numbering: none)
