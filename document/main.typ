@@ -31,7 +31,7 @@
 
 #set page(
     paper:"a4",
-    margin: (y:2cm,inside:3cm,outside:2cm),
+    margin: (y:2cm,inside:2.5cm,outside:2cm),
 )
 
 #set text(size:13pt,

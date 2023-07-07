@@ -40,4 +40,3 @@ PGS. Nguyễn Thanh Bình
 #v(1fr)
 Tp. Hồ Chí Minh - 2023
 ]
-#pagebreak()
