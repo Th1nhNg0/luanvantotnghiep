@@ -135,7 +135,7 @@ Mục lục của văn bản là phần quan trọng không thể thiếu. Tuy n
 )
 
 #figure(
-  image("../../images/csdl.svg", width: 70%, ),
+  image("../../images/csdl.png", width: 70%, ),
   caption: [
     Cấu trúc dữ liệu của cơ sở dữ liệu văn bản vi phạm pháp luật
   ]

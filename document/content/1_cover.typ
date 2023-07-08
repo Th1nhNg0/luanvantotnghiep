@@ -7,6 +7,7 @@
 #block(
   stroke: 2pt,
   inset: 30pt,
+  width: 100%
 )[
 #set align(center)
 *ĐẠI HỌC QUỐC GIA TP. HỒ CHÍ MINH*\
@@ -36,7 +37,7 @@ Tp. Hồ Chí Minh - 2023
 CHUYÊN NGÀNH KHOA HỌC DỮ LIỆU
 #v(1.5cm)
 *NGƯỜI HƯỚNG DẪN KHOA HỌC*\
-PGS. Nguyễn Thanh Bình
+PGS. TS. Nguyễn Thanh Bình
 #v(1fr)
 Tp. Hồ Chí Minh - 2023
 ]
