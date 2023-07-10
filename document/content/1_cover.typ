@@ -17,7 +17,11 @@
 #v(3cm)
 #par(justify: false,)[#text(weight: "bold",size:24pt,title)]
 #v(3cm)
-#upper([*LUẬN VĂN TỐT NGHIỆP*])
+#upper([*LUẬN VĂN TỐT NGHIỆP*])\
+CHUYÊN NGÀNH KHOA HỌC DỮ LIỆU
+#v(1.5cm)
+*NGƯỜI HƯỚNG DẪN KHOA HỌC*\
+PGS. TS. Nguyễn Thanh Bình
 #v(1fr)
 Tp. Hồ Chí Minh - 2023
 ]

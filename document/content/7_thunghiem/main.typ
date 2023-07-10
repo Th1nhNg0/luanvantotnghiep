@@ -1,5 +1,7 @@
 = Thử nghiệm <phan3>
 
+Từ những gì đã làm được trong bài báo *Intelligent Retrieval System on Legal Information* ở hội nghị *ACIIDS* @mypaper, tôi tiếp tục phát triển bộ dữ liệu hỏi đáp về luật với chủ đề là bảo hiểm xã hội.
+
 Phần cứng sử dụng:
 
 - CPU: Intel Core i5-12400F

@@ -31,7 +31,7 @@
 
 #set page(
     paper:"a4",
-    margin: (y:2cm,inside:2.5cm,outside:2cm),
+    margin: (y:2cm,x:2.5cm),
 )
 
 #set text(size:13pt,
@@ -79,4 +79,4 @@
 #pagebreak()
 
 #set text(size:12.5pt)
-#bibliography("ref.bib",style:"ieee")
+#bibliography("ref.bib") 

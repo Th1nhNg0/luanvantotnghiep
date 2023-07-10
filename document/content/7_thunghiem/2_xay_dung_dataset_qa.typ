@@ -1,7 +1,6 @@
 
 == Xây dựng bộ dữ liệu hỏi đáp luật <datasetqa>
 
-Từ những gì đã làm được ở Intelligent Retrieval System on Legal Information@mypaper, tôi tiếp tục phát triển bộ dữ liệu hỏi đáp về luật với chủ đề là bảo hiểm xã hội.
 
 Bộ câu hỏi được lấy từ website #link("https://baohiemxahoi.gov.vn")[baohiemxahoi.gov.vn], cổng thông tin điện tử bảo hiểm xã hội Việt Nam. Bao gồm 19330 bộ câu hỏi-trả lời được phân vào nhiều lĩnh vực khác nhau, xem @chlv.
 
