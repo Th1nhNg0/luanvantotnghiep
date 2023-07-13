@@ -8,6 +8,6 @@ Qua luận văn này, tôi đã nghiên cứu và hiểu hơn về lĩnh vực l
 
 - *Xây dựng mô hình ngôn ngữ lớn (LLM) cho tiếng Việt*. Các mô hình hiện nay chỉ hoạt động tốt trên tiếng Anh, hay các ngôn ngữ la-tin. Cần có một mô hình dành riêng cho tiếng Việt. Anh Tiến Dũng, nhà sáng lập của Symato#footnote([Symato là một nhóm các nhà nghiên cứu và phát triển yêu tiếng Việt, chung tay phát triển mô hình ngôn ngữ lớn và công nghệ chatbot tiếng Việt. Được thành lập vào tháng 2/2023, tới cuối tháng 8/2023 nhóm đã có hơn 700 thành viên. #link("www.symato.xyz")]), hiện đang cùng đội ngũ huấn luyện một mô hình dành riêng cho tiếng Việt, dựa trên RWKV@PENG_RWKV-LM_2021 và tokenizer sử dụng âm tiết tiếng Việt. Do giới hạn về kinh phí nên nhóm của anh chỉ có thể huấn luyện mô hình với kích thước nhỏ, nhưng kết quả của mô hình này rất khả quan. Nếu có thể huấn luyện mô hình với kích thước lớn hơn, chắc chắn kết quả sẽ tốt hơn nhiều. Xem kết quả tại: https://github.com/telexyz/symato
 
-- *Tra cứu*
+- *Dùng LLM để sinh câu trả lời cho các câu hỏi liên quan tới luật*. Trong bài luận này, tôi có thử nghiệm để tìm ra các nội dung liên quan đến câu hỏi. Tuy nhiên, để đưa ra được câu hỏi có ý nghĩa, chính xác, cần ứng dụng các mô hình LLM.
 
 - *Các vấn đề liên quan tới đạo đức, pháp lý khi sử dụng AI*. Cần có 1 phương pháp để kiểm soát những nội dung sinh ra từ AI. Sao cho nó không vi phạm đạo đức, pháp luật. Và cần có một cơ chế để kiểm soát, giám sát các mô hình AI. Để tránh việc các mô hình này bị lợi dụng, hay bị sử dụng sai mục đích.

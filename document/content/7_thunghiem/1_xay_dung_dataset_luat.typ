@@ -147,10 +147,15 @@ Mục lục của văn bản là phần quan trọng không thể thiếu. Tuy n
 #let example_text=example_text.split("\n")
 
 #figure(
+  
   block(
     stroke: 1pt,
     inset: 10pt,
-    align(left)[#example_text.slice(0,18).join("\n")......]
+    align(left)[
+      #set par(
+          justify: false,
+      )
+      #example_text.slice(0,17).join("\n")......]
   ),
   caption: [
     Văn bản sau khi xử lý 

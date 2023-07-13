@@ -22,6 +22,9 @@ Sau khi có được bộ dữ liệu hỏi đáp luật, tôi tiếp tục sử
     
   )[
     #align(left)[
+            #set par(
+          justify: false,
+      )
   *_Nội dung câu hỏi:_*\
 Sổ BHXH của tôi đã được chốt tại BHXH Ba Đình - Hà Nội. Hiện tại tôi bị mất 2 tờ rời của sổ , tôi đang sinh sống ở tỉnh Long An thì có thể ra cơ quan BHXH của tỉnh để xin cấp lại tờ rời BHXH hay không? hay phải ra cơ quan BHXH đã chốt sỗ thì mới có thể xin cấp lại được? Xin cảm ơn
 

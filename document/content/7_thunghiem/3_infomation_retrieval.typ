@@ -25,6 +25,9 @@ Trong đó:
         stroke: 1pt,
         inset: 10pt,
     )[
+              #set par(
+          justify: false,
+      )
         ```Python
 from underthesea import text_normalize,word_tokenize
 import re
@@ -83,6 +86,9 @@ Quá trình trên sẽ là *stage 1* của quá trình fine-tune. Sau khi fine-t
         stroke: 1pt,
         inset: 10pt,
     )[
+              #set par(
+          justify: false,
+      )
 ```json
 {
   "query": [
