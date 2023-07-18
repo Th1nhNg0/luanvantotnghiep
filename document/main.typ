@@ -31,7 +31,10 @@
 
 #set page(
     paper:"a4",
-    margin: 2.5cm
+    margin: (
+      inside: 3cm,
+      outside: 2cm,
+    )
 )
 
 #set text(size:13pt,
@@ -50,6 +53,7 @@
 )
 
 #include "./content/1_cover.typ"
+#pagebreak()
 #include "./content/2_loicamon.typ"
 
 #counter(page).update(1)
@@ -57,10 +61,21 @@
     header: getHeader(),
     numbering: "1",
 )
-#pagebreak()
+
 #outline(indent: true)
 #pagebreak()
+#outline(
+    title: [Danh mục bảng biểu],
+    target: figure.where(kind: table)
+)
 
+#outline(
+    title: [Danh mục hình ảnh],
+    target: figure.where(kind: image)
+)
+
+
+#pagebreak()
 #include "./content/3_loinoidau.typ"
 #set heading(
     numbering: "1.1.1.a.",
@@ -72,11 +87,7 @@
 #include "./content/8_ketluan.typ"
 
 #pagebreak()
-#outline(
-    title: [Phụ lục],
-    target: figure
-)
-#pagebreak()
+
 
 #set text(size:12.5pt)
 #bibliography("ref.bib") 

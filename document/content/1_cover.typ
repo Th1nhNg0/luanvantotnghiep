@@ -1,7 +1,10 @@
 #let title = "Deep learning in legal system: Opportunities and Challenges"
 #let author = "Ngô Phú Thịnh"
 
-#set page(margin: 1.5cm,numbering: none)
+#set page(margin: (
+        left: 3cm,
+        right: 2cm,
+),numbering: none)
 #set align(center)
 
 #block(
