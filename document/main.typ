@@ -32,7 +32,7 @@
 #set page(
     paper:"a4",
     margin: (
-      inside: 3cm,
+      inside: 2.5cm,
       outside: 2cm,
     )
 )

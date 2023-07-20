@@ -9,7 +9,7 @@ Phần cứng sử dụng:
 - RAM: 32GB DDR4
 
 
-Trong phạm vi của bài luận này, tôi chỉ sử dụng các văn bản liên quan tới lĩnh vực bảo hiểm xã hội và việc làm, bao gồm 761 điều luật để thử nghiệm và đánh giá:
+Trong phạm vi của bài luận này, tôi chỉ sử dụng các văn bản liên quan tới lĩnh vực bảo hiểm xã hội và việc làm, bao gồm 761 điều luật để thử nghiệm và đánh giá. Một số văn bản luật:
 
 #let luat_su_dung=csv("../../data/luat_su_dung.csv")
 #list(

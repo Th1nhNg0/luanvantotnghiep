@@ -80,6 +80,38 @@ Mục lục của văn bản là phần quan trọng không thể thiếu. Tuy n
 
 *Cấu trúc dữ liệu* của datasets gồm 3 bảng chính: `VanBan`, `LuocDo`, `ChiMuc` được mô tả như sau:
 
+
+#figure(
+  table(
+    align: left,
+    columns: (auto,auto,1fr),
+    [*Tên trường*], [*Kiểu dữ liệu*], [*Mô tả*],
+    [ten_chi_muc], [string], [Tên của chỉ mục],
+    [loai_chi_muc], [string], [Loại của mục lục. VD: phần, chương, mục, điều, khoản, điểm...],
+    [start_index], [integer], [Vị trí bắt đầu của nội dung của chỉ mục trong văn bản],
+    [end_index], [integer], [Vị trí kết thúc của nội dung của chỉ mục trong văn bản],
+    [parent_id], [integer (FK)], [ID của chỉ mục cha (nếu có), thể hiển tree structure#footnote([Tree structure hay cây là một cấu trúc dữ liệu được sử dụng rộng rãi gồm một tập hợp các nút (node) được liên kết với nhau theo quan hệ cha-con]).],
+    [vanban_id], [integer (FK)], [ID của văn bản],
+  ),
+  caption: [
+    Bảng `ChiMuc`: chứa thông tin về mục lục của văn bản vi phạm pháp luật.
+  ]
+)
+
+#figure(
+  table(
+    align: left,
+    columns: (auto,auto,1fr),
+    [*Tên trường*], [*Kiểu dữ liệu*], [*Mô tả*],
+    [source], [integer (FK)], [ID của văn bản nguồn],
+    [target], [integer (FK)], [ID của văn bản đích],
+    [loai_quan_he], [string], [Loại quan hệ giữa văn bản nguồn và văn bản đích. VD: thay thế, hướng dẫn, sửa đổi bổ sung...],
+  ),
+  caption: [
+   Bảng `LuocDo` chứa thông tin về mối quan hệ giữa các văn bản vi phạm pháp luật
+  ]
+)
+
 #figure(
   table(
     columns: (auto,auto,1fr),
@@ -103,39 +135,11 @@ Mục lục của văn bản là phần quan trọng không thể thiếu. Tuy n
   ]
 )
 
-#figure(
-  table(
-    align: left,
-    columns: (auto,auto,1fr),
-    [*Tên trường*], [*Kiểu dữ liệu*], [*Mô tả*],
-    [source], [integer (FK)], [ID của văn bản nguồn],
-    [target], [integer (FK)], [ID của văn bản đích],
-    [loai_quan_he], [string], [Loại quan hệ giữa văn bản nguồn và văn bản đích. VD: thay thế, hướng dẫn, sửa đổi bổ sung...],
-  ),
-  caption: [
-   Bảng `LuocDo` chứa thông tin về mối quan hệ giữa các văn bản vi phạm pháp luật
-  ]
-)
+
+
 
 #figure(
-  table(
-    align: left,
-    columns: (auto,auto,1fr),
-    [*Tên trường*], [*Kiểu dữ liệu*], [*Mô tả*],
-    [ten_chi_muc], [string], [Tên của chỉ mục],
-    [loai_chi_muc], [string], [Loại của mục lục. VD: phần, chương, mục, điều, khoản, điểm...],
-    [start_index], [integer], [Vị trí bắt đầu của nội dung của chỉ mục trong văn bản],
-    [end_index], [integer], [Vị trí kết thúc của nội dung của chỉ mục trong văn bản],
-    [parent_id], [integer (FK)], [ID của chỉ mục cha (nếu có), thể hiển tree structure#footnote([Tree structure hay cây là một cấu trúc dữ liệu được sử dụng rộng rãi gồm một tập hợp các nút (node) được liên kết với nhau theo quan hệ cha-con]).],
-    [vanban_id], [integer (FK)], [ID của văn bản],
-  ),
-  caption: [
-    Bảng `ChiMuc`: chứa thông tin về mục lục của văn bản vi phạm pháp luật.
-  ]
-)
-
-#figure(
-  image("../../images/csdl.png", width: 70%, ),
+  image("../../images/csdl.png", width: 60%, ),
   caption: [
     Cấu trúc dữ liệu của cơ sở dữ liệu văn bản vi phạm pháp luật
   ]

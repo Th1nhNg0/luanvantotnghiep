@@ -128,3 +128,5 @@ Kết quả của các model được thể hiện ở @finetune_result. Model g
     image("../../images/diagram.svg"),
     caption: [Sơ đồ tổng quan về phương pháp tiếp cận thứ hai],
 ) <sodo>
+
+Như vậy, tôi đã giải quyết được bài toán truy xuất thông tin với các công cụ cơ bản như TF-IDF, BM25 và model Instructor Embedding. Tuy nhiên, đây chưa phải là phương pháp tốt nhất. Có thể cải thiện kết quả bằng cách sử dụng các model có kích thước lớn hơn, hoặc sử dụng các mô hình khác như Dense Passage Retrieval@karpukhin2020dense,  Haystack@Pietsch_Haystack_the_end-to-end_2019...

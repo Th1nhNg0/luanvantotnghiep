@@ -1,6 +1,26 @@
 #pagebreak()
 = Cơ hội và thách thức <phan2>
 
+Điểm sơ qua quá trình hình thành và phát triển của các mô hình ngôn ngữ lớn (LLM):
+
+- Ngày 30 tháng 11 năm 2022, *OpenAI* phát triển và ra mắt *ChatGPT*, chatbot trí tuệ nhân tạo đầu tiên.
+- Ngày 6 tháng 2 năm 2023, *Google* cho ra mắt *Bard* cạnh tranh trực tiếp với *ChatGPT*.
+- Ngày 7 tháng 2 năm 2023, *Microsoft* công bố phiên bản search engine *Bing* dựa trên mô hình GPT tương tự như *ChatGPT*
+- Ngày 24 tháng 2 năm 2023, *Meta* cũng đã ra mắt *LLaMA*, mã nguồn mỡ, nhưng không công bố trọng số.
+
+Trong vòng một tuần, *LLaMA* bị rò rỉ ra công chúng. Từ thời điểm này trở đi, những đổi mới trở nên mạnh mẽ và nhanh chóng hơn.
+
+Điển hình như mô hình Vicuna@vicuna2023 được xây dựng dựa trên mô hình LLaMA, chỉ sau 3 tuần kể từ khi trọng số LLaMA bị rò rỉ. Độ chính xác so với ChatGPT đạt tới 90%, với chi phí 300\$.
+
+#figure(
+    image("../images/vicuna.png"),
+    caption: [
+        Chất lượng phản hồi của các mô hình được đánh giá bởi GPT-4
+    ]
+)
+
+Để hiểu rõ thêm về ứng dụng của các mô hình này trong lĩnh vực pháp luật, ta sẽ đi vào phân tích chi tiết các ứng dụng của chúng.
+
 == Sử dụng LLM để tra cứu và soạn thảo
 
 
@@ -65,7 +85,14 @@ Với sức mạnh của GPT-4, ta có thể thấy rõ ràng rằng, trong tư�
 
 == Robot luật sư
 
-DoNotPay@donotpay là một công ty khởi nghiệp công nghệ đứng sau ứng dụng được gọi là "robot luật sư đầu tiên trên thế giới", sử dụng trí tuệ nhân tạo để bảo vệ quyền lợi của người tiêu dùng. Trí tuệ nhân tạo này sẽ hướng dẫn các bị cáo cách trả lời trước tòa án bằng cách sử dụng một tai nghe có khả năng kết nối Bluetooth, theo bài báo của Matthew Sparkes trên tạp chí New Scientist@matthewsparkes_2023_ai.
+Một xu hướng mới đang nổi lên trong lĩnh vực AI là "cá nhân hóa" các mô hình ngôn ngữ lớn (LLM), tức là huấn luyện riêng biệt cho từng người dùng cụ thể thay vì cho một mô hình chung chung.
+
+Xu hướng này được thể hiện rõ nét qua sản phẩm Claude của Anthropic. Thay vì chỉ huấn luyện trên các tập dữ liệu công khai, Anthropic đã thu thập dữ liệu riêng từ các tình nguyện viên để Claude có thể hiểu rõ và phù hợp với từng cá nhân. Một số công ty khác cũng đang thử nghiệm các phiên bản LLM cá nhân hóa, ví dụ Bard của Google có thể được huấn luyện riêng cho người dùng nếu họ cho phép chia sẻ dữ liệu cá nhân.
+
+Các nhà phát triển hy vọng rằng với dữ liệu cá nhân hóa, LLM sẽ hiểu ngữ cảnh và ngôn ngữ tốt hơn cho từng cá nhân, từ đó có thể đưa ra phản hồi chính xác và thông minh hơn. Tuy nhiên, điều này cũng khiến người dùng lo ngại về việc liệu dữ liệu của họ có thể bị lộ ra ngoài hay không. Các công ty cần tìm cách cân bằng giữa lợi ích mang lại và việc bảo mật thông tin người dùng trong xu hướng cá nhân hóa LLM.
+
+
+*DoNotPay*@donotpay là một công ty khởi nghiệp công nghệ đứng sau ứng dụng được gọi là "robot luật sư đầu tiên trên thế giới", sử dụng trí tuệ nhân tạo để bảo vệ quyền lợi của người tiêu dùng. Trí tuệ nhân tạo này sẽ hướng dẫn các bị cáo cách trả lời trước tòa án bằng cách sử dụng một tai nghe có khả năng kết nối Bluetooth, theo bài báo của Matthew Sparkes trên tạp chí New Scientist@matthewsparkes_2023_ai.
 
 Joshua Browder, người sáng lập DoNotPay, trong bài phỏng vấn với David Lumb của CNET@lumb_2023_ai, cho biết các dịch vụ và phí pháp lý có thể đắt đỏ, ngăn cản một số người thuê luật sư truyền thống để đấu tranh cho họ tại tòa án. "Hầu hết mọi người không đủ khả năng đại diện pháp lý". Luật sư AI "sẽ là một bằng chứng về khái niệm cho các tòa án cho phép sử dụng công nghệ trong phòng xử án".
 
@@ -167,11 +194,7 @@ Với dữ liệu hỏi đáp liên quan tới luật thì khó hơn, vì nó c�
 Một vấn đề khác cũng quan trọng không kém đó là kiến trúc của các model LLM. Hay cụ thể hơn là phần tokenizer#footnote([Tokenizer là một quá trình chuyển đổi văn bản thành các token (đơn vị nhỏ nhất trong xử lý ngôn ngữ tự nhiên) để có thể xử lý dữ liệu bằng máy tính. Các token có thể là từ, ký tự hoặc sub-word. Tokenizer được sử dụng để tạo từ vựng trong một kho ngữ liệu (một tập dữ liệu trong NLP). Từ vựng này sau đó được chuyển thành số (ID) và giúp chúng ta lập mô hình]) của các model này, nó chỉ phù hợp cho nội dung là tiếng Anh vì cách dùng từ, cách đặt câu của tiếng anh và tiếng việt khác nhau. Và bảng mã sử dụng cho hai ngôn ngữ cũng khác, tiếng Anh sử dụng bảng mã ASCII, tiếng việt sử dụng bảng mã Unicode. Ở @sstoken ta có thể thấy được sự khác biệt này, tuy đoạn chữ tiếng Việt có ít kí tự hơn nhưng số lượng token lại nhiều hơn. Do đó, khi sử dụng các model này với tiếng Việt thì thời gian chạy rất lâu và độ chính xác rất thấp. 
 
 #figure(
-    grid(
-        columns: 2,
-        image("../images/tokenizer1.png"),
-        image("../images/tokenizer2.png"),
-    ),
+    image("../images/tokenizer.png"),
     caption: [
         So sánh tokenizer của giữa tiếng Việt và tiếng Anh
     ]
