@@ -90,4 +90,4 @@
 
 
 #set text(size:12.5pt)
-#bibliography("ref.bib") 
+#bibliography("ref.bib",style: "apa") 
