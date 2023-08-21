@@ -1,10 +1,7 @@
 #let title = "Deep learning in legal system: Opportunities and Challenges"
 #let author = "Ngô Phú Thịnh"
 
-#set page(margin: (
-        left: 3cm,
-        right: 2cm,
-),numbering: none)
+#set page(numbering: none)
 #set align(center)
 
 #block(
@@ -23,8 +20,7 @@
 #upper([*LUẬN VĂN TỐT NGHIỆP*])\
 CHUYÊN NGÀNH KHOA HỌC DỮ LIỆU
 #v(1.5cm)
-*NGƯỜI HƯỚNG DẪN KHOA HỌC*\
-PGS. TS. Nguyễn Thanh Bình
+
 #v(1fr)
 Tp. Hồ Chí Minh - 2023
 ]

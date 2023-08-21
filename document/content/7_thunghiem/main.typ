@@ -1,6 +1,7 @@
+#pagebreak()
 = Thử nghiệm <phan3>
 
-Từ những gì đã làm được trong bài báo *Intelligent Retrieval System on Legal Information* ở hội nghị *ACIIDS* @mypaper, tôi tiếp tục phát triển bộ dữ liệu hỏi đáp về luật với chủ đề là bảo hiểm xã hội.
+Từ những gì đã làm được trong bài báo *Intelligent Retrieval System on Legal Information* @mypaper ở hội thảo khoa học quốc tế *ACIIDS* #footnote([ACIIDS ( Asian Conference on Intelligent Information and Database Systems ) là hội thảo khoa học quốc tế về nghiên cứu trong lĩnh vực hệ thống thông tin và cơ sở dữ liệu thông minh, được tổ chức từ ngày 24 đến ngày 26 tháng 7 năm 2023 tại Phuket, Thái Lan.]), cùng với thầy Nguyễn Thanh Bình và các cộng sự, tôi tiếp tục phát triển các bộ dữ liệu về luật với chủ đề là bảo hiểm xã hội.
 
 Phần cứng sử dụng:
 

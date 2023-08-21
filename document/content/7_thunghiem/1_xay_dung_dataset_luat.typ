@@ -6,52 +6,7 @@
 #let tvpl_linhvuc = csv("../../data/tvpl_linhvuc.csv")
 
 
-Theo dữ liệu từ Thư viện pháp luật#footnote([thuvienphapluat.vn là trang chuyên cung cấp cơ sở dữ liệu, tra cứu và thảo luận pháp luật]), hiện nay Việt Nam có trên dưới 303936 văn bản vi phạm pháp luật. Bao gồm #tvpl_loaivanban.len() loại văn bản và #tvpl_linhvuc.len() lĩnh vực khác nhau:
-
-
-#figure(
-  grid(
-    columns: (1fr,1fr),
-    column-gutter: 10pt,
-    table(
-      columns: (1fr,1fr),
-      [*Loại văn bản*], [*Số lượng*],
-      ..tvpl_loaivanban.slice(0, calc.floor(tvpl_loaivanban.len()/2)).flatten()
-    ),
-    table(
-      columns: (1fr,1fr),
-      [*Loại văn bản*], [*Số lượng*],
-      ..tvpl_loaivanban.slice(calc.floor(tvpl_loaivanban.len()/2), tvpl_loaivanban.len()).flatten()
-    ),
-  ),
-  caption: [
-    Số lượng văn bản vi phạm pháp luật theo loại văn bản
-  ]
-)
-#[
-#set par(justify: false)
-#figure(
-  grid(
-    columns: (1fr,1fr),
-    column-gutter: 10pt,
-    table(
-      align: center + horizon,
-      columns: (1fr,1fr),
-      [*Lĩnh vực*], [*Số lượng*],
-      ..tvpl_linhvuc.slice(0, calc.ceil(tvpl_linhvuc.len()/2)).flatten()
-    ),
-    table(
-      columns: (1fr,1fr),
-      align: center + horizon,
-      [*Lĩnh vực*], [*Số lượng*],
-      ..tvpl_linhvuc.slice(calc.ceil(tvpl_linhvuc.len()/2), tvpl_linhvuc.len()).flatten()
-    ),
-  ),
-  caption: [
-    Số lượng văn bản vi phạm pháp luật theo lĩnh vực
-  ]
-)
-]
+Theo dữ liệu từ Thư viện pháp luật#footnote([thuvienphapluat.vn là trang chuyên cung cấp cơ sở dữ liệu, tra cứu và thảo luận pháp luật]), hiện nay Việt Nam có trên dưới 300000 văn bản vi phạm pháp luật. Bao gồm #tvpl_loaivanban.len() loại văn bản và #tvpl_linhvuc.len() lĩnh vực khác nhau. Xem @bangtk1 và @bangtk2.
 
 Các thuộc tính của một văn bản quy phạm pháp luật gồm: tên văn bản, số hiệu văn bản, loại văn bản, nơi ban hành, người ký, ngày ban hành, ngày hiệu lực, ngày công báo, số công báo.
 
@@ -76,9 +31,56 @@ Mục lục của văn bản là phần quan trọng không thể thiếu. Tuy n
 
 
 
+#figure(
+  grid(
+    columns: (1fr,1fr),
+    column-gutter: 10pt,
+    table(
+      columns: (1fr,1fr),
+      [*Loại văn bản*], [*Số lượng*],
+      ..tvpl_loaivanban.slice(0, calc.floor(tvpl_loaivanban.len()/2)).flatten()
+    ),
+    table(
+      columns: (1fr,1fr),
+      [*Loại văn bản*], [*Số lượng*],
+      ..tvpl_loaivanban.slice(calc.floor(tvpl_loaivanban.len()/2), tvpl_loaivanban.len()).flatten()
+    ),
+  ),
+  caption: [
+    Số lượng văn bản vi phạm pháp luật theo loại văn bản
+  ]
+) <bangtk1>
+
+#[
+#set par(justify: false)
+#figure(
+  grid(
+    columns: (1fr,1fr),
+    column-gutter: 10pt,
+    table(
+      align: center + horizon,
+      columns: (1fr,1fr),
+      [*Lĩnh vực*], [*Số lượng*],
+      ..tvpl_linhvuc.slice(0, calc.ceil(tvpl_linhvuc.len()/2)).flatten()
+    ),
+    table(
+      columns: (1fr,1fr),
+      align: center + horizon,
+      [*Lĩnh vực*], [*Số lượng*],
+      ..tvpl_linhvuc.slice(calc.ceil(tvpl_linhvuc.len()/2), tvpl_linhvuc.len()).flatten()
+    ),
+  ),
+  caption: [
+    Số lượng văn bản vi phạm pháp luật theo lĩnh vực
+  ]
+) <bangtk2>
+]
+
+
+
 === Xây dựng cơ sở dữ liệu
 
-*Cấu trúc dữ liệu* của datasets gồm 3 bảng chính: `VanBan`, `LuocDo`, `ChiMuc` được mô tả như sau:
+*Cấu trúc dữ liệu* của dữ liệu gồm 3 bảng chính: `VanBan`, `LuocDo`, `ChiMuc` được mô tả như sau:
 
 
 #figure(
@@ -151,7 +153,6 @@ Mục lục của văn bản là phần quan trọng không thể thiếu. Tuy n
 #let example_text=example_text.split("\n")
 
 #figure(
-  
   block(
     stroke: 1pt,
     inset: 10pt,
@@ -159,14 +160,17 @@ Mục lục của văn bản là phần quan trọng không thể thiếu. Tuy n
       #set par(
           justify: false,
       )
-      #example_text.slice(0,17).join("\n")......]
+      #set text(
+        size: 11pt
+      )
+      #example_text.slice(0,12).join("\n")......]
   ),
   caption: [
     Văn bản sau khi xử lý 
   ]
 )
 
-*Tạo mục lục:* để tạo chỉ mục cho văn bản, tôi sử dụng regex#footnote([Regex là một chuỗi các ký tự đặc biệt được định nghĩa để tạo nên các mẫu (pattern) và được sử dụng để tìm kiếm và thay thế các chuỗi trong một văn bản]) để tìm kiếm các chỉ mục trong văn bản. Như đã nêu trong @soluocdulieu các regex để tìm chỉ mục là:
+*Tạo mục lục:* để tạo chỉ mục cho văn bản, tôi sử dụng regex#footnote([Regex là một chuỗi các ký tự đặc biệt được định nghĩa để tạo nên các mẫu (pattern) và được sử dụng để tìm kiếm và thay thế các chuỗi trong một văn bản]) để tìm kiếm các chỉ mục trong văn bản. Tuy nhiên, phương pháp này chỉ là semi-auto, vì có những trường hợp regex không thể tìm được chỉ mục thì phải thêm thủ công.
 
 
 #figure(
@@ -186,8 +190,6 @@ Mục lục của văn bản là phần quan trọng không thể thiếu. Tuy n
   ]
 )
 
-Phương pháp sử dụng regex tuy tốt nhưng vẫn chỉ là bán tự động, vì có một số trường hợp đặc biết vẫn cần sự can thiệp từ con người để có được kết quả tốt nhất.
-
 Để đơn giản khi lập trình, tôi lưu kết quả sau khi xử lý thành định dạng JSON#footnote([JSON là viết tắt của Javascript Object Notation, là một bộ quy tắc về cách trình bày và mô tả dữ liệu trong một chuỗi lớn thống nhất được gọi chung là chuỗi JSON. Chuỗi JSON được bắt đầu bằng ký tự { và kết thúc bởi ký tự }]):
 
 #let result = read("../../data/luat-bao-hiem-xa-hoi-2014/tree.json")
@@ -204,7 +206,7 @@ Phương pháp sử dụng regex tuy tốt nhưng vẫn chỉ là bán tự đ�
   ]
 )
 
-Sau khi xây dựng được datasets về luật, tôi có tạo thêm một python package dùng để truy vấn dữ liệu một cách dễ dàng @Ngo_LawQuery:
+Sau khi xây dựng được datasets về luật, tôi có tạo thêm một python package dùng để truy vấn dữ liệu một cách thuận tiện hơn@Ngo_LawQuery. @examplecode là một đoạn code mẫu để truy vấn dữ liệu.
 
 #figure(
   block(
@@ -246,5 +248,6 @@ node.content
 ```],
   caption: [
     Sử dụng package `lawquery` để truy vấn dữ liệu
-  ]
-)
+  ],
+  kind: image
+) <examplecode>

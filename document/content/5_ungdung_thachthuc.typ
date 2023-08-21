@@ -1,7 +1,7 @@
 #pagebreak()
 = Cơ hội và thách thức <phan2>
 
-Điểm sơ qua quá trình hình thành và phát triển của các mô hình ngôn ngữ lớn (LLM):
+Điểm sơ qua quá trình hình thành và phát triển của các mô hình ngôn ngữ lớn:
 
 - Ngày 30 tháng 11 năm 2022, *OpenAI* phát triển và ra mắt *ChatGPT*, chatbot trí tuệ nhân tạo đầu tiên.
 - Ngày 6 tháng 2 năm 2023, *Google* cho ra mắt *Bard* cạnh tranh trực tiếp với *ChatGPT*.
@@ -118,7 +118,7 @@ Tuy các ứng dụng của các mô hình ngôn ngữ lớn mang lại nhiều 
 
 *Bảo mật thông tin:*
 
-Hiện nay các model LLM có độ chính xác cao nhất đều là do bên thứ 3 cung cấp, vd: OpenAI, Cohere, Stability AI... Do đó, những doanh nghiệp có dữ liệu nhạy cảm rất khó để sử dụng các công cụ này. Theo tạp chí Fortune@mcglauflin_2023_apple, một số công ty như Apple, Samsung... đã cấm nhân viên của mình sử dụng ChatGPT vì lo ngại các thông tin nhạy cảm có thể bị rò rỉ.
+Hiện nay các model LLM có độ chính xác cao nhất đều là do bên thứ 3 cung cấp: OpenAI, Cohere, Stability AI... Do đó, những doanh nghiệp có dữ liệu nhạy cảm rất khó để sử dụng các công cụ này. Theo tạp chí Fortune@mcglauflin_2023_apple, một số công ty như Apple, Samsung... đã cấm nhân viên của mình sử dụng ChatGPT vì lo ngại các thông tin nhạy cảm có thể bị rò rỉ.
 
 Do vậy, để dùng được các công cụ này, các doanh nghiệp phải tự chủ được các công nghệ AI. Mà để tự chủ được các công nghệ này thì cần một chi phí cực kì cao. Theo Business Insider, một ngày OpenAI có thể phải trả tới 700,000 USD để duy trì hệ thống của mình.@mok_2023_chatgpt
 
@@ -136,12 +136,12 @@ Chi phí để huấn luyện một mô hình ngôn ngữ lớn được The Nex
         ..train_price.flatten()
     ),
     caption: [
-    Chi phí để train mô hình ngôn ngữ lớn
+    Chi phí để huấn luyện một mô hình ngôn ngữ lớn
     ]
 ) <chiphitrain>
 
 
-Chi phí để sử dụng các model LLM do bên thứ 3 cung cấp được tính bằng tokens. Tokens là một đơn vị đo lường được sử dụng để đo lường số lượng từ được sử dụng trong một câu. Ví dụ: "Con mèo đang đuổi theo con chuột" có 7 tokens. 
+Chi phí để sử dụng các model LLM do bên thứ 3 cung cấp được tính bằng tokens. Tokens là một đơn vị đo lường được sử dụng để đo lường số lượng từ được sử dụng trong một câu. Ví dụ: "Con mèo đang đuổi theo con chuột" có 7 tokens. Do đó, nếu lưu lượng sử dụng công cụ AI càng nhiều thì chi phí phải bỏ ra để vận hành càng cao.
 
 #let openai_price = csv("../data/openai_price.csv")
 
@@ -156,7 +156,7 @@ Chi phí để sử dụng các model LLM do bên thứ 3 cung cấp được t�
     ]
 )
 
-Ta có thể sử dụng các model LLM open source có độ hiệu quả tương tự như Bloom, GPT-J... Nhưng để chạy được những model này thì cần một lượng lớn phần cứng. Điển hình như Bloom@workshop2023bloom, để chạy model Bloom 176B (176 billion parameters) cần đến 8 card đồ họa A100 80GB. Với chi phí khoản 15000 USD cho một card, tổng chi phí để chạy model này lên tới 120,000 USD chưa tính đến chi phí bảo trì.
+Ta có thể sử dụng các model LLM open source có độ hiệu quả tương tự như Bloom, GPT-J... Nhưng để chạy được những model này thì cần một lượng lớn phần cứng. Điển hình như Bloom@workshop2023bloom, để chạy model Bloom 176B (176 billion parameters) cần đến 8 card đồ họa A100 80GB. Với chi phí khoản 15000 USD cho một card, tổng chi phí để chạy model này lên tới 120,000 USD chưa tính đến chi phí vận hành và bảo trì.
 
 Các nhà nghiên cứu đã sáng tạo ra nhiều phương pháp để khắc phục các nhược điểm này. Điển như hình LoRa@hu2022lora dùng để fine-tune các model lớn, giúp model học thêm các kiến thức mới mà không tốn quá nhiều tài nguyên. Hay GPTQ@frantar-gptq viết tắt của Generative Pre-Training Quantized, một phương pháp "nén" mô hình để có thể chạy trên các thiết bị yếu hơn, không cần GPU. Đây cũng là một trong các mục tiêu mà các nhà nghiên cứu đang hướng đến: "chạy mô hình ngôn ngữ lớn trên mọi thiết bị" như điện thoại, laptop, các thiết bị điện tử trong công nghiệp...
 
@@ -177,21 +177,25 @@ Về phần Getty Images, CEO đơn vị cung cấp bản quyền hình ảnh n�
 
 Từ 2 ví dụ trên, ta có thể thấy vấn đề đạo đức và pháp lý đối với các ứng dụng AI vẫn còn khá mập mờ. Chưa có một đạo luật nào để quy định, hướng dẫn, bảo vệ cho những nhân tố trong lĩnh vực này.
 
+Rất khó khăn để có thể thương mại hóa một ứng dụng AI với điều kiện hiện nay. Vì để gia nhập cuộc chơi này thì cần một số tiền đầu tư rất lớn, nhưng kết quả thu được lại không thể đảm bảo. Nên những công nghệ này hiện nay vẫn chỉ nằm trong các phòng thí nghiệm, hay được sử dụng nội bộ trong các công ty lớn, chưa thể tiếp cận rộng rãi được với đại đa số người dùng.
+
+\
+
 *Thách thức đối với tiếng Việt:*
 
-Ngoài các thách thức chung như đã nêu ở trên thì tiếng Việt còn đối mặt với một số thách thức riêng.
+Ngoài các thách thức chung như đã nêu ở trên thì đối với các mô hình ngôn ngữ sử dụng tiếng Việt còn phải đối mặt với một số thách thức riêng.
 
-Phần quan trọng nhất để tạo nên các mô hình ngôn ngữ lớn chính là dữ liệu. Hiện nay chưa có một nguồn dữ liệu mở chính thống có kiểm duyệt nào cho tiếng Việt. Các nguồn dữ liệu hiện có đều là từ các trang web, các bài báo, các bài viết trên mạng internet. Do đó, các mô hình ngôn ngữ lớn cho tiếng Việt hiện nay đều có độ chính xác thấp hơn các mô hình cho tiếng Anh.
+Phần quan trọng nhất để tạo nên các mô hình ngôn ngữ lớn chính là *dữ liệu*. Hiện nay chưa có một nguồn dữ liệu mở chính thống có kiểm duyệt nào cho tiếng Việt. Các nguồn dữ liệu hiện có đều là từ các trang web, các bài báo, các bài viết trên mạng internet. Những nguồn dữ liệu này chỉ mang tính chất thông tin thông thường, trong đó còn có nhiễu bởi các thông tin độc hại, sai sự thật. Do đó, các mô hình ngôn ngữ lớn cho tiếng Việt hiện nay đều có độ chính xác thấp hơn các mô hình cho tiếng Anh.
 
 Các tri thức tiếng Việt đa số đều ở trong sách vở, các nguồn tại liệu đóng... mà những nguồn này đều không được công khai, nếu khai thác các nguồn dữ liệu này có thể vi phạm bản quyền, sở hữu trí tuệ của các tác giả có liên quan.
 
-Để có thể phát triền mảng AI ở Việt Nam, ta cần một chính sách nới lỏng hơn cho các nhà nghiên cứu có thể tiếp cận các nguồn dữ liệu này. Theo Technomancers.ai@prime_2023_japan, chính phủ Nhật Bản đã công bố một chính sách cho phép AI có thể dung bất kì loại dữ liệu nào  "bất kể đó là vì mục đích phi lợi nhuận hay thương mại, cho dù đó là một hành động không phải là sao chép hay đó là nội dung thu được từ các trang web bất hợp pháp hay cách khác". Cho thấy sự sẵn sàng để cạnh tranh với các nước khác trong lĩnh vực AI.
+Để có thể phát triền mảng AI ở Việt Nam, ta cần một chính sách nới lỏng hơn cho các nhà nghiên cứu có thể tiếp cận các nguồn dữ liệu này. Theo Technomancers.ai@prime_2023_japan, chính phủ Nhật Bản đã công bố một chính sách cho phép các ứng dụng AI có thể dùng bất kì loại dữ liệu nào  "bất kể đó là vì mục đích phi lợi nhuận hay thương mại, cho dù đó là một hành động không phải là sao chép hay đó là nội dung thu được từ các trang web bất hợp pháp hay cách khác". Cho thấy sự sẵn sàng để cạnh tranh với các nước khác trong lĩnh vực AI.
 
 Đối với dữ liệu về văn bản vi phạm pháp luật ở Việt Nam, những văn bản này được nhà nước ban hành và miễn phí sử dụng cho người dân. Vì vậy việc sử dụng các văn bản này sẽ không có vấn đề về pháp lý. Tuy nhiên, dữ liệu còn ở dạng thô (raw data), chưa phù hợp để huấn luyện mô hình vì thế trong @datasetluat tôi có đề xuất xây dựng một bộ dữ liệu về văn bản vi phạm pháp luật.
 
 Với dữ liệu hỏi đáp liên quan tới luật thì khó hơn, vì nó cần qua sự kiểm duyệt của con người để đảm bảo tính chính xác. Và người kiểm duyệt phải có chuyên môn về luật. Do đó, việc xây dựng một bộ dữ liệu hỏi đáp liên quan tới luật hiện tại vẫn đang là một việc làm khó khăn và tốn kém.
 
-Một vấn đề khác cũng quan trọng không kém đó là kiến trúc của các model LLM. Hay cụ thể hơn là phần tokenizer#footnote([Tokenizer là một quá trình chuyển đổi văn bản thành các token (đơn vị nhỏ nhất trong xử lý ngôn ngữ tự nhiên) để có thể xử lý dữ liệu bằng máy tính. Các token có thể là từ, ký tự hoặc sub-word. Tokenizer được sử dụng để tạo từ vựng trong một kho ngữ liệu (một tập dữ liệu trong NLP). Từ vựng này sau đó được chuyển thành số (ID) và giúp chúng ta lập mô hình]) của các model này, nó chỉ phù hợp cho nội dung là tiếng Anh vì cách dùng từ, cách đặt câu của tiếng anh và tiếng việt khác nhau. Và bảng mã sử dụng cho hai ngôn ngữ cũng khác, tiếng Anh sử dụng bảng mã ASCII, tiếng việt sử dụng bảng mã Unicode. Ở @sstoken ta có thể thấy được sự khác biệt này, tuy đoạn chữ tiếng Việt có ít kí tự hơn nhưng số lượng token lại nhiều hơn. Do đó, khi sử dụng các model này với tiếng Việt thì thời gian chạy rất lâu và độ chính xác rất thấp. 
+Một vấn đề khác cũng quan trọng không kém đó là kiến trúc của các model LLM. Hay cụ thể hơn là phần tokenizer#footnote([Tokenizer là một quá trình chuyển đổi văn bản thành các token (đơn vị nhỏ nhất trong xử lý ngôn ngữ tự nhiên) để có thể xử lý dữ liệu bằng máy tính. Các token có thể là từ, ký tự hoặc sub-word. Tokenizer được sử dụng để tạo từ vựng trong một kho ngữ liệu (một tập dữ liệu trong NLP). Từ vựng này sau đó được chuyển thành số (ID) và giúp chúng ta lập mô hình]) của các model này, nó chỉ phù hợp cho nội dung là tiếng Anh vì cách dùng từ, cách đặt câu của tiếng Anh và tiếng Việt khác nhau. Và bảng mã sử dụng cho hai ngôn ngữ cũng khác, tiếng Anh sử dụng bảng mã ASCII, tiếng việt sử dụng bảng mã Unicode. Ở @sstoken ta có thể thấy được sự khác biệt này, tuy đoạn chữ tiếng Việt có ít kí tự hơn nhưng số lượng token lại nhiều hơn. Do đó, khi sử dụng các model này với tiếng Việt thì thời gian chạy rất lâu và độ chính xác rất thấp. 
 
 #figure(
     image("../images/tokenizer.png"),

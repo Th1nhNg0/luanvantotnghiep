@@ -31,13 +31,9 @@
 
 #set page(
     paper:"a4",
-    margin: (
-      inside: 2.5cm,
-      outside: 2cm,
-    )
 )
 
-#set text(size:13pt,
+#set text(size:13.3pt,
         font: "TeX Gyre Pagella",
         lang:"vi",
 )
@@ -68,7 +64,7 @@
     title: [Danh mục bảng biểu],
     target: figure.where(kind: table)
 )
-
+#pagebreak()
 #outline(
     title: [Danh mục hình ảnh],
     target: figure.where(kind: image)
