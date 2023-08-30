@@ -90,7 +90,7 @@ Từ biểu đồ trên ta thấy: số lượng văn bản thường tăng đ�
   image("../../images/lineplot2.svg")
   ,
   caption: [
-    Số lượng văn bản vi phạm pháp luật ban hành theo tháng của 5 năm gần đây
+    Số lượng văn bản vi phạm pháp luật ban hành theo năm
   ]
 ) 
 
