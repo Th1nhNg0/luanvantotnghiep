@@ -6,7 +6,7 @@
 #let tvpl_linhvuc = csv("../../data/tvpl_linhvuc.csv")
 
 
-Theo dữ liệu từ Thư viện pháp luật#footnote([thuvienphapluat.vn là trang chuyên cung cấp cơ sở dữ liệu, tra cứu và thảo luận pháp luật]), hiện nay Việt Nam có trên dưới 300000 văn bản vi phạm pháp luật. Bao gồm #tvpl_loaivanban.len() loại văn bản và #tvpl_linhvuc.len() lĩnh vực khác nhau. Xem @bangtk1 và @bangtk2.
+Theo dữ liệu từ Thư viện pháp luật#footnote([thuvienphapluat.vn là trang chuyên cung cấp cơ sở dữ liệu, tra cứu và thảo luận pháp luật]), hiện nay Việt Nam có trên dưới 300000 văn bản vi phạm pháp luật. Bao gồm #tvpl_loaivanban.len() loại văn bản và #tvpl_linhvuc.len() lĩnh vực khác nhau.
 
 Các thuộc tính của một văn bản quy phạm pháp luật gồm: tên văn bản, số hiệu văn bản, loại văn bản, nơi ban hành, người ký, ngày ban hành, ngày hiệu lực, ngày công báo, số công báo.
 
@@ -29,7 +29,7 @@ Ngoài ra các thuộc tính trên, còn có lược đồ thể hiện mối qu
 
 Mục lục của văn bản là phần quan trọng không thể thiếu. Tuy nhiên không phải văn bản nào cũng có mục lục, và cũng không có một định dạng chuẩn cho mục lục. Các chỉ mục thường thấy là: phần, chương, mục, điều, khoản, điểm.
 
-
+Một số nhận xét và thống kê về dữ liệu:
 
 #figure(
   grid(
@@ -75,6 +75,27 @@ Mục lục của văn bản là phần quan trọng không thể thiếu. Tuy n
   ]
 ) <bangtk2>
 ]
+
+#figure(
+  image("../../images/lineplot.svg")
+  ,
+  caption: [
+    Số lượng văn bản vi phạm pháp luật ban hành theo tháng của 5 năm gần đây
+  ]
+) 
+
+Từ biểu đồ trên ta thấy: số lượng văn bản thường tăng đột biến vào các tháng giữa và cuối năm. Vì đây là các thời điểm diễn ra Kỳ họp Quốc hội hằng năm, thời điểm các quyết định được nhà nước ban hành nhiều nhất.
+
+#figure(
+  image("../../images/lineplot2.svg")
+  ,
+  caption: [
+    Số lượng văn bản vi phạm pháp luật ban hành theo tháng của 5 năm gần đây
+  ]
+) 
+
+Tuy nhiên, khoảng 10 năm trở lại đây, số lượng văn bản được ban hành tăng rất nhanh. Điển hình như số lượng văn bản được ban hành ở năm 2021 nhiều gấp đôi năm 2011.
+
 
 
 
