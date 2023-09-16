@@ -191,7 +191,7 @@ Các tri thức tiếng Việt đa số đều ở trong sách vở, các nguồ
 
 Để có thể phát triền mảng AI ở Việt Nam, ta cần một chính sách nới lỏng hơn cho các nhà nghiên cứu có thể tiếp cận các nguồn dữ liệu này. Theo Technomancers.ai@prime_2023_japan, chính phủ Nhật Bản đã công bố một chính sách cho phép các ứng dụng AI có thể dùng bất kì loại dữ liệu nào  "bất kể đó là vì mục đích phi lợi nhuận hay thương mại, cho dù đó là một hành động không phải là sao chép hay đó là nội dung thu được từ các trang web bất hợp pháp hay cách khác". Cho thấy sự sẵn sàng để cạnh tranh với các nước khác trong lĩnh vực AI.
 
-Đối với dữ liệu về văn bản vi phạm pháp luật ở Việt Nam, những văn bản này được nhà nước ban hành và miễn phí sử dụng cho người dân. Vì vậy việc sử dụng các văn bản này sẽ không có vấn đề về pháp lý. Tuy nhiên, dữ liệu còn ở dạng thô (raw data), chưa phù hợp để huấn luyện mô hình vì thế trong @datasetluat tôi có đề xuất xây dựng một bộ dữ liệu về văn bản vi phạm pháp luật.
+Đối với dữ liệu về văn bản quy phạm pháp luật ở Việt Nam, những văn bản này được nhà nước ban hành và miễn phí sử dụng cho người dân. Vì vậy việc sử dụng các văn bản này sẽ không có vấn đề về pháp lý. Tuy nhiên, dữ liệu còn ở dạng thô (raw data), chưa phù hợp để huấn luyện mô hình vì thế trong @datasetluat tôi có đề xuất xây dựng một bộ dữ liệu về văn bản quy phạm pháp luật.
 
 Với dữ liệu hỏi đáp liên quan tới luật thì khó hơn, vì nó cần qua sự kiểm duyệt của con người để đảm bảo tính chính xác. Và người kiểm duyệt phải có chuyên môn về luật. Do đó, việc xây dựng một bộ dữ liệu hỏi đáp liên quan tới luật hiện tại vẫn đang là một việc làm khó khăn và tốn kém.
 

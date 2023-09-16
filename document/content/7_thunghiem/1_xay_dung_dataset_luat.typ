@@ -1,4 +1,4 @@
-== Xây dựng bộ dữ liệu văn bản vi phạm pháp luật <datasetluat>
+== Xây dựng bộ dữ liệu văn bản quy phạm pháp luật <datasetluat>
 
 === Sơ lược về dữ liệu <soluocdulieu>
 
@@ -6,7 +6,7 @@
 #let tvpl_linhvuc = csv("../../data/tvpl_linhvuc.csv")
 
 
-Theo dữ liệu từ Thư viện pháp luật#footnote([thuvienphapluat.vn là trang chuyên cung cấp cơ sở dữ liệu, tra cứu và thảo luận pháp luật]), hiện nay Việt Nam có trên dưới 300000 văn bản vi phạm pháp luật. Bao gồm #tvpl_loaivanban.len() loại văn bản và #tvpl_linhvuc.len() lĩnh vực khác nhau.
+Theo dữ liệu từ Thư viện pháp luật#footnote([thuvienphapluat.vn là trang chuyên cung cấp cơ sở dữ liệu, tra cứu và thảo luận pháp luật]), hiện nay Việt Nam có trên dưới 300000 văn bản quy phạm pháp luật. Bao gồm #tvpl_loaivanban.len() loại văn bản và #tvpl_linhvuc.len() lĩnh vực khác nhau.
 
 Các thuộc tính của một văn bản quy phạm pháp luật gồm: tên văn bản, số hiệu văn bản, loại văn bản, nơi ban hành, người ký, ngày ban hành, ngày hiệu lực, ngày công báo, số công báo.
 
@@ -47,7 +47,7 @@ Một số nhận xét và thống kê về dữ liệu:
     ),
   ),
   caption: [
-    Số lượng văn bản vi phạm pháp luật theo loại văn bản
+    Số lượng văn bản quy phạm pháp luật theo loại văn bản
   ]
 ) <bangtk1>
 
@@ -71,7 +71,7 @@ Một số nhận xét và thống kê về dữ liệu:
     ),
   ),
   caption: [
-    Số lượng văn bản vi phạm pháp luật theo lĩnh vực
+    Số lượng văn bản quy phạm pháp luật theo lĩnh vực
   ]
 ) <bangtk2>
 ]
@@ -80,7 +80,7 @@ Một số nhận xét và thống kê về dữ liệu:
   image("../../images/lineplot.svg")
   ,
   caption: [
-    Số lượng văn bản vi phạm pháp luật ban hành theo tháng của 5 năm gần đây
+    Số lượng văn bản quy phạm pháp luật ban hành theo tháng của 5 năm gần đây
   ]
 ) 
 
@@ -90,7 +90,7 @@ Từ biểu đồ trên ta thấy: số lượng văn bản thường tăng đ�
   image("../../images/lineplot2.svg")
   ,
   caption: [
-    Số lượng văn bản vi phạm pháp luật ban hành theo năm
+    Số lượng văn bản quy phạm pháp luật ban hành theo năm
   ]
 ) 
 
@@ -117,7 +117,7 @@ Tuy nhiên, khoảng 10 năm trở lại đây, số lượng văn bản đượ
     [vanban_id], [integer (FK)], [ID của văn bản],
   ),
   caption: [
-    Bảng `ChiMuc`: chứa thông tin về mục lục của văn bản vi phạm pháp luật.
+    Bảng `ChiMuc`: chứa thông tin về mục lục của văn bản quy phạm pháp luật.
   ]
 )
 
@@ -131,7 +131,7 @@ Tuy nhiên, khoảng 10 năm trở lại đây, số lượng văn bản đượ
     [loai_quan_he], [string], [Loại quan hệ giữa văn bản nguồn và văn bản đích. VD: thay thế, hướng dẫn, sửa đổi bổ sung...],
   ),
   caption: [
-   Bảng `LuocDo` chứa thông tin về mối quan hệ giữa các văn bản vi phạm pháp luật
+   Bảng `LuocDo` chứa thông tin về mối quan hệ giữa các văn bản quy phạm pháp luật
   ]
 )
 
@@ -154,7 +154,7 @@ Tuy nhiên, khoảng 10 năm trở lại đây, số lượng văn bản đượ
     [linh_vuc], [string], [Lĩnh vực của văn bản],
   ),
   caption: [
-    Bảng `VanBan` chứa thông tin về văn bản vi phạm pháp luật
+    Bảng `VanBan` chứa thông tin về văn bản quy phạm pháp luật
   ]
 )
 
@@ -164,7 +164,7 @@ Tuy nhiên, khoảng 10 năm trở lại đây, số lượng văn bản đượ
 #figure(
   image("../../images/csdl.png", width: 60%, ),
   caption: [
-    Cấu trúc dữ liệu của cơ sở dữ liệu văn bản vi phạm pháp luật
+    Cấu trúc dữ liệu của cơ sở dữ liệu văn bản quy phạm pháp luật
   ]
 )
 
